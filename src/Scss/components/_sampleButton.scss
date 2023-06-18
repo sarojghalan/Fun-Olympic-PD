@@ -1,13 +1,14 @@
 @import "../abstract/variables";
 .base__sample__button {
   border: none;
-  padding: $xs-spacing $md-spacing;
+  padding: $s-spacing $md-spacing;
   border: $none;
   cursor: pointer;
   text-transform: capitalize;
   background-color: $primary-color;
   border-radius: $s-spacing;
   color: $white-color;
+  letter-spacing: 1px;
   &:hover {
     background-color: $black-color;
   }

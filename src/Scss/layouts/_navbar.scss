@@ -1,0 +1,31 @@
+@import "../abstract/variables";
+.navbar {
+  position: sticky;
+  top: 0%;
+  left: 0%;
+  box-shadow: $none;
+  background-color: $white-color !important;
+  .navbar-brand {
+    img {
+      height: 20px;
+      width: 80px;
+      object-fit: contain;
+    }
+  }
+  .navbar-nav {
+    gap: $lg-spacing;
+    .nav-item {
+      a {
+        &:hover {
+          background-color: $primary-color;
+          color: $white-color !important;
+          border-radius: $s-spacing;
+        }
+      }
+    }
+  }
+  .nav__right__section {
+    gap: $lg-spacing;
+    display: flex;
+  }
+}

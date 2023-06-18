@@ -1,6 +1,9 @@
 body {
   margin: 0;
   padding: 0;
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-transform: capitalize !important;
 }
 p,
 h1,
@@ -16,7 +19,7 @@ a {
   color: #000;
   text-decoration: none;
 }
-button{
+button {
   margin: 0;
   padding: 0;
 }
