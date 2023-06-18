@@ -1,6 +1,11 @@
+import SampleButton from "../../Components/Button/SampleButton";
 import { logo } from "../../assets";
 
 function Navbar() {
+  const RegisterHandler = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+  };
+
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <div className="container-fluid">
@@ -16,7 +21,7 @@ function Navbar() {
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <span className="navbar-toggler-icon" /> 
+          <span className="navbar-toggler-icon" />
         </button>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
@@ -70,9 +75,13 @@ function Navbar() {
             <button className="btn btn-outline-success" type="submit">
               Login
             </button>
-            <button className="btn btn-outline-success" type="submit">
-              Register
-            </button>
+            <SampleButton
+              title="Register"
+              nameOfClass=""
+              handler={(e: React.MouseEvent<HTMLButtonElement>) =>
+                RegisterHandler(e)
+              }
+            />
           </form>
         </div>
       </div>

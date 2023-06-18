@@ -1,3 +1,14 @@
- .base__sample__button{
-    
- }
+@import "../abstract/variables";
+.base__sample__button {
+  border: none;
+  padding: $xs-spacing $md-spacing;
+  border: $none;
+  cursor: pointer;
+  text-transform: capitalize;
+  background-color: $primary-color;
+  border-radius: $s-spacing;
+  color: $white-color;
+  &:hover {
+    background-color: $black-color;
+  }
+}
