@@ -1,0 +1,13 @@
+@import "../abstract/variables";
+.master__banner__wrapper {
+  margin: $lg-spacing $xs-spacing;
+  .master__banner__left__section {
+    margin-bottom: $lg-spacing;
+  }
+  .master__banner__right__section {
+    margin-bottom: $lg-spacing;
+  }
+}
+.html5-video-player {
+  width: 100px !important;
+}
