@@ -6,8 +6,9 @@
   }
   .master__banner__right__section {
     margin-bottom: $lg-spacing;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
-}
-.html5-video-player {
-  width: 100px !important;
 }
