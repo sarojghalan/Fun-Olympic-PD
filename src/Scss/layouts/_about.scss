@@ -1,10 +1,16 @@
-@import "../abstract/variables";
+@import "../abstract/_abstracts";
 
 .about__wrapper {
   display: flex;
   margin: $lg-spacing $xs-spacing;
   text-transform: capitalize;
-  flex-direction: column;
+  // flex-direction: column;
+  @include md{
+    flex-direction: column;
+  };
+  @include sm{
+    flex-direction: column;
+  }
   .about__left__section {
     display: flex;
     flex-basis: 50%;
@@ -23,6 +29,9 @@
     align-items: center;
     p{
         text-align: justify;
+        @include sm{
+          text-align: center;
+        }
     }
   }
 }

@@ -13,24 +13,24 @@ import { ReactPlayerInterface } from "../Interface/ReactPlayerInterface";
       muted: true,
       playing: true,
       controls: false,
-      height: "180px",
-      width: "300px",
+      height: "23.3vh",
+      width: "80%",
       url: "https://www.youtube.com/watch?v=rFFuXHRPMNI"
     },
     {
       muted: true,
       playing: true,
       controls: false,
-      height: "180px",
-      width: "300px",
+      height: "23.3vh",
+      width: "80%",
       url: "https://www.youtube.com/watch?v=rFFuXHRPMNI"
     },
     {
       muted: true,
       playing: true,
       controls: false,
-      height: "180px",
-      width: "300px",
+      height: "23.3vh",
+      width: "80%",
       url: "https://www.youtube.com/watch?v=rFFuXHRPMNI"
     },
   ];

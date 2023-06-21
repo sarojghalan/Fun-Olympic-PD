@@ -1,3 +1,4 @@
+import Title from "../../Components/Title/Title";
 import "../../Scss/Main.scss";
 import ReactVideoPlayer from "../../Utils/ReactVideoPlayer";
 import { videoUrls } from "../../data/videoUrl";
@@ -7,7 +8,7 @@ function MasterBanner() {
     <div className="master__banner__wrapper">
       <div className="container">
         <div className="row">
-          <div className="col-8">
+          <div className="col-12 col-lg-8 col-md-12 col-sm-12 ">
             <div className="master__banner__left__section">
               <ReactVideoPlayer
                 playing={videoUrls[0]?.playing}
@@ -19,7 +20,8 @@ function MasterBanner() {
               />
             </div>
           </div>
-          <div className="col-4">
+          <div className="col-lg-4 col-md-12 col-sm-6 col-12">
+            <Title title="Related Videos" />
             {videoUrls.slice(1).map((item) => (
               <div className="master__banner__right__section">
                 <ReactVideoPlayer
@@ -31,7 +33,7 @@ function MasterBanner() {
                 />
               </div>
             ))}
-          </div>
+            </div>
         </div>
       </div>
     </div>

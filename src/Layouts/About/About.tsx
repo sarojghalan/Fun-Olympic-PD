@@ -7,7 +7,7 @@ function About() {
       <Title title="About Fun Olympics" />
       <div className="about__wrapper">
         <div className="about__left__section">
-            <img src={logo} alt="logo" />
+          <img src={logo} alt="logo" />
         </div>
         <div className="about__right__section">
           <p>

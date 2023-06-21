@@ -1,6 +1,7 @@
 @import '../abstract/variables';
 .title__wrapper{
     text-align: center;
+    margin:0px  $xs-spacing $md-spacing; 
     h3{
         font-size: $md-font;
         font-weight: $bold;
