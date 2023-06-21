@@ -1,4 +1,3 @@
-import ReactPlayer from "react-player";
 import "../../Scss/Main.scss";
 import ReactVideoPlayer from "../../Utils/ReactVideoPlayer";
 import { videoUrls } from "../../data/videoUrl";

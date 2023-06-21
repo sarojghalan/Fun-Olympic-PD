@@ -1,0 +1,28 @@
+@import "../abstract/variables";
+
+.about__wrapper {
+  display: flex;
+  margin: $lg-spacing $xs-spacing;
+  text-transform: capitalize;
+  flex-direction: column;
+  .about__left__section {
+    display: flex;
+    flex-basis: 50%;
+    justify-content: center;
+    align-items: center;
+    img {
+      height: 200px;
+      width: 100%;
+      object-fit: contain;
+    }
+  }
+  .about__right__section {
+    display: flex;
+    flex-basis: 50%;
+    justify-content: center;
+    align-items: center;
+    p{
+        text-align: justify;
+    }
+  }
+}

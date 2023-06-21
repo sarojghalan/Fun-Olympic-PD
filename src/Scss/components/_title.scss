@@ -1,0 +1,8 @@
+@import '../abstract/variables';
+.title__wrapper{
+    text-align: center;
+    h3{
+        font-size: $md-font;
+        font-weight: $bold;
+    }
+}

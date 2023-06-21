@@ -2,12 +2,12 @@ import { ReactPlayerInterface } from "../Interface/ReactPlayerInterface";
   
   export const videoUrls:ReactPlayerInterface[] = [
     {
-      muted: false,
+      muted: true,
       playing: true,
       controls: false,
       height: "85vh",
       width: "100%",
-      url: "https://www.youtube.com/watch?v=fg_5chxKCHo"
+      url: "https://www.youtube.com/watch?v=hQYRDNl-lGI"
     },
     {
       muted: true,
