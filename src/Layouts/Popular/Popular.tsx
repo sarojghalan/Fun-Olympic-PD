@@ -1,5 +1,6 @@
 import StreamCard from "../../Components/Card/StreamCard";
 import Title from "../../Components/Title/Title";
+import { dummyStream } from "../../data/dummyStream";
 
 function Popular() {
   return (
@@ -8,7 +9,16 @@ function Popular() {
         <Title title="Popular Stream" />
       </div>
       <div className="row">
-        <div className="col-3">
+        {dummyStream.map((item) => (
+          <div className="col-3 col-md-6 col-sm-6 col-lg-3">
+            <StreamCard
+              image={item.image}
+              cardTitle={item.cardTitle}
+              cardDescription={item.cardDescription}
+            />
+          </div>
+        ))}
+        {/* <div className="col-3">
             <StreamCard />
         </div>
         <div className="col-3">
@@ -19,7 +29,7 @@ function Popular() {
         </div>
         <div className="col-3">
             <StreamCard />
-        </div>
+        </div> */}
       </div>
     </div>
   );
