@@ -1,0 +1,46 @@
+@import "../abstract/_abstracts";
+.footer__container {
+    background-color: $secondary-color;
+    color: $primary-color;
+  .footer__wrapper {
+    display: flex;
+    padding: $lg-spacing;
+    justify-content: space-evenly;
+    width: 100%;
+    .footer__content {
+      flex: 1;
+      padding: 0px $md-spacing;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      .footer__image__wrapper{
+        margin-bottom: $md-spacing;
+        img {
+            height: 40px;
+            width: 80px;
+            object-fit: contain;
+          }
+      }
+      h3{
+        margin-bottom: $md-spacing;
+        color: $primary-color;
+      }
+      p {
+        text-align: justify;
+      }
+      ul {
+        padding: 0px;
+        li {
+          list-style-type: none;
+          p{
+            span{
+                color: $primary-color;
+                margin-right: $md-spacing;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -16,7 +16,7 @@ function App() {
       <MasterBanner />
       <About />
       <Popular />
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 }
