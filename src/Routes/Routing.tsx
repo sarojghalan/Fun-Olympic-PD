@@ -1,8 +1,9 @@
 import { lazy, Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
+import Register from "../Pages/Auth/Register";
 
 const Home = lazy(() => import("../Layouts/Home/Home"));
-const Login = lazy(() => import("../Pages/Login/Login"));
+const Login = lazy(() => import("../Pages/Auth/Login"));
 
 function Routing() {
   return (
@@ -10,6 +11,7 @@ function Routing() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
       </Routes>
     </Suspense>
   );

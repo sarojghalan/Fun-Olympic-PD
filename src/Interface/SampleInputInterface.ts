@@ -3,4 +3,5 @@ export interface SampleInputInterface {
   onChangeHandler: (e: React.ChangeEvent<HTMLInputElement>) => void;
   value: string;
   name: string;
+  type: string;
 }

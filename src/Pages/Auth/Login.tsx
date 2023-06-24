@@ -3,10 +3,8 @@ import SampleButton from "../../Components/Button/SampleButton";
 import SampleInput from "../../Components/Input/SampleInput";
 import { logo } from "../../assets";
 import "../../Scss/Main.scss";
-interface loginI {
-  email: string;
-  password: string;
-}
+import { loginI } from "../../Interface/Auth/LoginInterface";
+
 function Login() {
   const credentials: loginI = {
     email: "",
@@ -28,12 +26,14 @@ function Login() {
           <img src={logo} alt="logo" />
         </div>
         <div className="login__right__section">
-          <h3>Welcome to the Fun Olympics</h3>
+          <h3>Welcome Back to the Fun Olympics</h3>
           <div className="login__form__section">
             <form>
               <div className="login__input__bar">
-                <label htmlFor="">Email : </label><br />
+                <label htmlFor="">Email : </label>
+                <br />
                 <SampleInput
+                  type="email"
                   placeHolder="Enter Your Email Here .."
                   name="email"
                   value={loginCredentials.email}
@@ -46,6 +46,7 @@ function Login() {
                 <label htmlFor="">Password : </label>
                 <br />
                 <SampleInput
+                  type="text"
                   placeHolder="Enter Your Password Here .."
                   name="password"
                   value={loginCredentials.password}

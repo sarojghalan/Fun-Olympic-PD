@@ -11,12 +11,13 @@ function Navbar() {
   };
   const RegisterHandler = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
+    navigate('/register');
   };
 
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <div className="container">
-        <a className="navbar-brand" href="#">
+        <a className="navbar-brand" href="/">
           <img className="logo" src={logo} alt="logo" />
         </a>
         <button

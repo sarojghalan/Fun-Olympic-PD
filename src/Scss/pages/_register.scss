@@ -1,0 +1,44 @@
+@import "../abstract/_abstracts";
+.register__wrapper{
+    display: flex;
+    height: 92vh;
+    justify-content: center;
+    align-items: center;
+    .register__left__section{
+        flex: 1;
+        img{
+            height: 40vh;
+            width: 100%;
+            object-fit: contain;
+        }
+    }
+    .register__right__section{
+        flex: 1;
+        text-align: center;
+        h3{
+            color: $primary-color;
+            margin-bottom:$sm-spacing ;
+        }
+        .register__form__section{
+            background-color: $secondary-color;
+            margin: 0px $lg-spacing;
+            padding: $lg-spacing;
+            align-items: start;
+            border-radius: $sm-spacing;
+            .register__input__bar{
+                label{
+                    margin-bottom: $sm-spacing;
+                }
+                input{
+                    margin-bottom: $lg-spacing;
+                    width: 80%;
+                }
+            }
+            .register__btn{
+                button{
+                    width: 80%;
+                }
+            }
+        }
+    }
+}
