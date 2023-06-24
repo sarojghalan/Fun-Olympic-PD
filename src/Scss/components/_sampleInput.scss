@@ -1,0 +1,12 @@
+@import "../abstract/variables";
+.base__sample__input {
+  border: none;
+  padding: $s-spacing $md-spacing;
+  border: $none;
+  cursor: pointer;
+  text-transform: capitalize;
+  background-color: $secondary-color;
+  border-radius: $s-spacing;
+  color: $white-color;
+  letter-spacing: 1px;
+}

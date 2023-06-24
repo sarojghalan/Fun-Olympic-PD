@@ -1,10 +1,13 @@
 import SampleButton from "../../Components/Button/SampleButton";
 import { logo } from "../../assets";
 import "../../Scss/Main.scss";
+import { useNavigate } from "react-router-dom";
 
 function Navbar() {
+  const navigate = useNavigate();
   const LoginHandler = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
+    navigate('/login');
   };
   const RegisterHandler = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
