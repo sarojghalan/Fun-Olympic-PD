@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import SampleButton from "../../Components/Button/SampleButton";
 import SampleInput from "../../Components/Input/SampleInput";
 import { logo } from "../../assets";
+import "../../Scss/Main.scss";
 interface loginI {
   email: string;
   password: string;
@@ -27,11 +28,11 @@ function Login() {
           <img src={logo} alt="logo" />
         </div>
         <div className="login__right__section">
-          <p>Welcome to the Fun Olympics</p>
+          <h3>Welcome to the Fun Olympics</h3>
           <div className="login__form__section">
             <form>
               <div className="login__input__bar">
-                <label htmlFor="">Email : </label>
+                <label htmlFor="">Email : </label><br />
                 <SampleInput
                   placeHolder="Enter Your Email Here .."
                   name="email"
@@ -43,6 +44,7 @@ function Login() {
               </div>
               <div className="login__input__bar">
                 <label htmlFor="">Password : </label>
+                <br />
                 <SampleInput
                   placeHolder="Enter Your Password Here .."
                   name="password"

@@ -1,1 +1,45 @@
 @import "../abstract/_abstracts";
+.login__wrapper{
+    display: flex;
+    height: 80vh;
+    justify-content: center;
+    align-items: center;
+    .login__left__section{
+        flex: 1;
+
+        img{
+            height: 40vh;
+            width: 100%;
+            object-fit: contain;
+        }
+    }
+    .login__right__section{
+        flex: 1;
+        text-align: center;
+        h3{
+            color: $primary-color;
+            margin-bottom:$md-spacing ;
+        }
+        .login__form__section{
+            background-color: $secondary-color;
+            margin: 0px $lg-spacing;
+            padding: $lg-spacing;
+            align-items: start;
+            border-radius: $md-spacing;
+            .login__input__bar{
+                label{
+                    margin-bottom: $md-spacing;
+                }
+                input{
+                    margin-bottom: $lg-spacing;
+                    width: 80%;
+                }
+            }
+            .login__btn{
+                button{
+                    width: 80%;
+                }
+            }
+        }
+    }
+}
