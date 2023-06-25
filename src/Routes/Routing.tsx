@@ -6,6 +6,7 @@ const Login = lazy(() => import("../Pages/Auth/Login"));
 const Register = lazy(() => import("../Pages/Auth/Register"));
 const Category = lazy(() => import("../Pages/Category"));
 const Live = lazy(() => import("../Pages/Live"));
+const Favorite = lazy(() => import("../Pages/Favorite"));
 
 function Routing() {
   return (
@@ -16,6 +17,7 @@ function Routing() {
         <Route path="/register" element={<Register />} />
         <Route path="/category" element={<Category />} />
         <Route path="/live" element={<Live />} />
+        <Route path="/favorite" element={<Favorite />} />
       </Routes>
     </Suspense>
   );
