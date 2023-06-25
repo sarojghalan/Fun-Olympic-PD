@@ -1,10 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { logo } from "../../assets";
 import SampleButton from "../../Components/Button/SampleButton";
 import SampleInput from "../../Components/Input/SampleInput";
 import { RegisterI } from "../../Interface/Auth/RegisterInterface";
 import "../../Scss/Main.scss";
+import { UserContext } from "../../context/UserContext";
+import { useSnackbar } from "notistack";
+
 function Register() {
+  const { isLoading, setIsLoading, user, setUser } = useContext(UserContext);
   const credentials: RegisterI = {
     fullName: "",
     age: "",
@@ -13,19 +17,43 @@ function Register() {
     confirmPassword: "",
   };
 
+  const { enqueueSnackbar } = useSnackbar();
+
   const [registerCredentials, setregisterCreddentials] =
     useState<RegisterI>(credentials);
 
   const inputHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
-    console.log("targeted value : ", e.target.value);
+    setregisterCreddentials({
+      ...registerCredentials,
+      [e.target.name]: e.target.value,
+    });
   };
 
   const RegisterHandler = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
+    setIsLoading(true);
+    if (registerCredentials.password !== registerCredentials.confirmPassword) {
+      enqueueSnackbar("Password and Confirm Password must be same.", {
+        variant: "error",
+      });
+      setIsLoading(false);
+    } else if (user?.email === registerCredentials.email) {
+      enqueueSnackbar("Provided email has been already registered", {
+        variant: "error",
+      });
+      setIsLoading(false);
+    } else {
+      setUser({ ...registerCredentials });
+      enqueueSnackbar("You have been successfully registerd.", {
+        variant: "success",
+      });
+      setregisterCreddentials(credentials);
+      setIsLoading(false);
+    }
   };
 
-  console.log(typeof registerCredentials.age);
+  console.log(user?.email);
 
   return (
     <div className="container">
@@ -69,7 +97,7 @@ function Register() {
                 <SampleInput
                   type="text"
                   placeHolder="Enter Email Here .."
-                  name="email"
+                  name="age"
                   value={registerCredentials.age}
                   onChangeHandler={(e: React.ChangeEvent<HTMLInputElement>) =>
                     inputHandler(e)
