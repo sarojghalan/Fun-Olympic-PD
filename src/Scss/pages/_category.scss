@@ -1,0 +1,6 @@
+@import "../abstract/_abstracts";
+.category__wrapper{
+    display: flex;
+    gap: $md-spacing;
+    margin: $lg-spacing;
+}

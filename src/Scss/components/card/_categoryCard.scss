@@ -8,6 +8,8 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    border-radius: $md-spacing;
+    cursor: pointer;
     span{
         color: $primary-color;
         font-size: $lg-spacing;
