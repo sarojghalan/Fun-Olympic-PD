@@ -1,10 +1,11 @@
 import { lazy, Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
-import Register from "../Pages/Auth/Register";
-import Category from "../Pages/Category";
 
 const Home = lazy(() => import("../Layouts/Home/Home"));
 const Login = lazy(() => import("../Pages/Auth/Login"));
+const Register = lazy(() => import("../Pages/Auth/Register"));
+const Category = lazy(() => import("../Pages/Category"));
+const Live = lazy(() => import("../Pages/Live"));
 
 function Routing() {
   return (
@@ -14,6 +15,7 @@ function Routing() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/category" element={<Category />} />
+        <Route path="/live" element={<Live />} />
       </Routes>
     </Suspense>
   );

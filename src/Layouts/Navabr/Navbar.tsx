@@ -7,11 +7,11 @@ function Navbar() {
   const navigate = useNavigate();
   const LoginHandler = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
-    navigate('/login');
+    navigate("/login");
   };
   const RegisterHandler = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
-    navigate('/register');
+    navigate("/register");
   };
 
   return (
@@ -34,7 +34,11 @@ function Navbar() {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="/category">
+              <a
+                className="nav-link active"
+                aria-current="page"
+                href="/category"
+              >
                 Categories
               </a>
             </li>
@@ -44,7 +48,7 @@ function Navbar() {
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="#">
+              <a className="nav-link active" aria-current="page" href="/live">
                 live
               </a>
             </li>
