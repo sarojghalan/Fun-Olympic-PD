@@ -1,0 +1,18 @@
+@import '../../abstract/_abstracts';
+
+.categories__card__wrapper{
+    background-color: $secondary-color;
+    height: 300px;
+    width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    span{
+        color: $primary-color;
+        font-size: $lg-spacing;
+    }
+    h3{
+        font-size: $md-spacing;
+    }
+}
