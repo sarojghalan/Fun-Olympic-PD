@@ -18,6 +18,7 @@ function Register() {
 
   const inputHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
+    console.log("targeted value : ", e.target.value);
   };
 
   const RegisterHandler = (e: React.MouseEvent<HTMLButtonElement>) => {

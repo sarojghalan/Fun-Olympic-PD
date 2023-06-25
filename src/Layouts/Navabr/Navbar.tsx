@@ -1,7 +1,7 @@
 import SampleButton from "../../Components/Button/SampleButton";
 import { logo } from "../../assets";
 import "../../Scss/Main.scss";
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 function Navbar() {
   const navigate = useNavigate();
@@ -17,9 +17,9 @@ function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <div className="container">
-        <a className="navbar-brand" href="/">
+        <NavLink className="navbar-brand" to="/">
           <img className="logo" src={logo} alt="logo" />
-        </a>
+        </NavLink>
         <button
           className="navbar-toggler"
           type="button"
@@ -34,23 +34,27 @@ function Navbar() {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <a
+              <NavLink
                 className="nav-link active"
                 aria-current="page"
-                href="/category"
+                to="/category"
               >
                 Categories
-              </a>
+              </NavLink>
             </li>
             <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="#">
+              <NavLink className="nav-link active" aria-current="page" to="/favorite">
                 Favorite
-              </a>
+              </NavLink>
             </li>
             <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="/live">
+              <NavLink
+                className="nav-link active"
+                aria-current="page"
+                to="/live"
+              >
                 live
-              </a>
+              </NavLink>
             </li>
           </ul>
           <div className="nav__right__section">
