@@ -10,8 +10,8 @@ interface UserI {
 interface UserContextI {
   isLoading: boolean;
   setIsLoading: React.Dispatch<React.SetStateAction<boolean>>;
-  user: UserI | null;
-  setUser: React.Dispatch<React.SetStateAction<UserI | null>>;
+  user: UserI[] | null;
+  setUser: React.Dispatch<React.SetStateAction<UserI[] | null>>;
 }
 
 interface UserProviderI {
@@ -22,7 +22,7 @@ export const UserContext = createContext<UserContextI>({} as UserContextI);
 
 const UserProvider = ({ children }: UserProviderI) => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
-  const [user, setUser] = useState<UserI | null>(null);
+  const [user, setUser] = useState<UserI[] | null>(null);
 
   useEffect(() => {
     setIsLoading(true);

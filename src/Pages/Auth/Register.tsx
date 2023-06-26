@@ -6,9 +6,12 @@ import { RegisterI } from "../../Interface/Auth/RegisterInterface";
 import "../../Scss/Main.scss";
 import { UserContext } from "../../context/UserContext";
 import { useSnackbar } from "notistack";
+import { useNavigate } from "react-router-dom";
 
 function Register() {
   const { isLoading, setIsLoading, user, setUser } = useContext(UserContext);
+  const navigate = useNavigate();
+
   const credentials: RegisterI = {
     fullName: "",
     age: "",
@@ -32,19 +35,38 @@ function Register() {
 
   const RegisterHandler = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
+    const findEmail = user?.find(
+      (item) => item.email === registerCredentials.email
+    );
     setIsLoading(true);
-    if (registerCredentials.password !== registerCredentials.confirmPassword) {
+    if (
+      registerCredentials.fullName === "" ||
+      registerCredentials.email === "" ||
+      registerCredentials.age === "" ||
+      registerCredentials.password === "" ||
+      registerCredentials.confirmPassword === ""
+    ) {
+      enqueueSnackbar("Empty field detected .", { variant: "error" });
+    } else if (
+      registerCredentials.password !== registerCredentials.confirmPassword
+    ) {
       enqueueSnackbar("Password and Confirm Password must be same.", {
         variant: "error",
       });
       setIsLoading(false);
-    } else if (user?.email === registerCredentials.email) {
+    } else if (findEmail) {
       enqueueSnackbar("Provided email has been already registered", {
         variant: "error",
       });
       setIsLoading(false);
     } else {
-      setUser({ ...registerCredentials });
+      if (user === null) {
+        setUser([{ ...registerCredentials }]);
+        navigate("/login");
+      } else {
+        setUser([...user, registerCredentials]);
+        navigate("/login");
+      }
       enqueueSnackbar("You have been successfully registerd.", {
         variant: "success",
       });
@@ -53,7 +75,7 @@ function Register() {
     }
   };
 
-  console.log(user?.email);
+  console.log("register : ", registerCredentials);
 
   return (
     <div className="container">
