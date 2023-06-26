@@ -1,9 +1,12 @@
+import React, { useContext } from "react";
 import SampleButton from "../../Components/Button/SampleButton";
 import { logo } from "../../assets";
 import "../../Scss/Main.scss";
 import { NavLink, useNavigate } from "react-router-dom";
+import { ActiveUserContext } from "../../context/ActiveUser";
 
 function Navbar() {
+  const { activeUser } = useContext(ActiveUserContext);
   const navigate = useNavigate();
   const LoginHandler = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
@@ -43,7 +46,11 @@ function Navbar() {
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link active" aria-current="page" to="/favorite">
+              <NavLink
+                className="nav-link active"
+                aria-current="page"
+                to="/favorite"
+              >
                 Favorite
               </NavLink>
             </li>
@@ -58,24 +65,39 @@ function Navbar() {
             </li>
           </ul>
           <div className="nav__right__section">
-            <div>
-              <SampleButton
-                title="Login"
-                nameOfClass=""
-                handler={(e: React.MouseEvent<HTMLButtonElement>) =>
-                  LoginHandler(e)
-                }
-              />
-            </div>
-            <div>
-              <SampleButton
-                title="Register"
-                nameOfClass=""
-                handler={(e: React.MouseEvent<HTMLButtonElement>) =>
-                  RegisterHandler(e)
-                }
-              />
-            </div>
+            {activeUser ? (
+              <div>
+                <SampleButton
+                  title="Log Out"
+                  nameOfClass=""
+                  handler={(e: React.MouseEvent<HTMLButtonElement>) =>
+                    LoginHandler(e)
+                  }
+                />
+              </div>
+            ) : (
+              <>
+                {" "}
+                <div>
+                  <SampleButton
+                    title="Login"
+                    nameOfClass=""
+                    handler={(e: React.MouseEvent<HTMLButtonElement>) =>
+                      LoginHandler(e)
+                    }
+                  />
+                </div>
+                <div>
+                  <SampleButton
+                    title="Register"
+                    nameOfClass=""
+                    handler={(e: React.MouseEvent<HTMLButtonElement>) =>
+                      RegisterHandler(e)
+                    }
+                  />
+                </div>
+              </>
+            )}
           </div>
         </div>
       </div>

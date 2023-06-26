@@ -1,23 +1,69 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import SampleButton from "../../Components/Button/SampleButton";
 import SampleInput from "../../Components/Input/SampleInput";
 import { logo } from "../../assets";
 import "../../Scss/Main.scss";
 import { loginI } from "../../Interface/Auth/LoginInterface";
+import { UserContext } from "../../context/UserContext";
+import { useSnackbar } from "notistack";
+import { useNavigate } from "react-router-dom";
+import { ActiveUserContext } from "../../context/ActiveUser";
 
 function Login() {
   const credentials: loginI = {
     email: "",
     password: "",
   };
+  const { enqueueSnackbar } = useSnackbar();
+  const { user } = useContext(UserContext);
+  const { activeUser, setActiveUser } = useContext(ActiveUserContext);
+  const navigate = useNavigate();
   const [loginCredentials, setLoginCredentials] = useState<loginI>(credentials);
 
   const inputHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
+    setLoginCredentials({
+      ...loginCredentials,
+      [e.target.name]: e.target.value,
+    });
   };
+
+  console.log("user data : ", user);
 
   const loginHandler = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
+    const findUser = user?.find(
+      (item) => item.email === loginCredentials.email
+    );
+    if (loginCredentials.email === "" || loginCredentials.password === "") {
+      enqueueSnackbar("Empty Field Detected", { variant: "error" });
+    }
+    if (findUser) {
+      if (
+        findUser?.email === loginCredentials.email &&
+        findUser?.password === loginCredentials.password
+      ) {
+        enqueueSnackbar("You have successfully logged in", {
+          variant: "success",
+        });
+        setActiveUser({ ...findUser });
+        navigate("/");
+      }
+      if (findUser?.password !== loginCredentials.password) {
+        enqueueSnackbar("Incorrect Password", {
+          variant: "error",
+        });
+      }
+    }
+    if (
+      !findUser &&
+      loginCredentials.email !== "" &&
+      loginCredentials.password !== ""
+    ) {
+      enqueueSnackbar("Cannot find your email. Create Account", {
+        variant: "error",
+      });
+    }
   };
   return (
     <div className="container">
