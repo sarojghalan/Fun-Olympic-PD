@@ -5,6 +5,7 @@
   left: 0%;
   box-shadow: $none;
   background-color: $white-color !important;
+  z-index: 9999;
   .navbar-brand {
     img {
       height: 20px;

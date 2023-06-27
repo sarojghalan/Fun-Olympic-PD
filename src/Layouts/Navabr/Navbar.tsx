@@ -6,7 +6,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { ActiveUserContext } from "../../context/ActiveUser";
 
 function Navbar() {
-  const { activeUser } = useContext(ActiveUserContext);
+  const { activeUser, setActiveUser } = useContext(ActiveUserContext);
   const navigate = useNavigate();
   const LoginHandler = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
@@ -15,6 +15,12 @@ function Navbar() {
   const RegisterHandler = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     navigate("/register");
+  };
+
+  const logoutHandler = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    setActiveUser(null);
+    navigate("/");
   };
 
   return (
@@ -71,7 +77,7 @@ function Navbar() {
                   title="Log Out"
                   nameOfClass=""
                   handler={(e: React.MouseEvent<HTMLButtonElement>) =>
-                    LoginHandler(e)
+                    logoutHandler(e)
                   }
                 />
               </div>

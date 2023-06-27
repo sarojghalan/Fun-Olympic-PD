@@ -11,4 +11,36 @@
     align-items: center;
     justify-content: center;
   }
+  .master__banner__img__wrapper {
+    text-align: center;
+    position: relative;
+    .master__banner__btn {
+      position: absolute;
+      top: 90%;
+      left: 44%;
+      border: $none;
+      background-color: $primary-color;
+      color: $white-color;
+      font-size: $sm-font;
+      border-radius: $md-spacing;
+      padding: $sm-spacing $lg-spacing;
+      border: 1px solid $white-color;
+    }
+    button {
+      position: absolute;
+      top: 60%;
+      left: 42%;
+      border: $none;
+      background-color: $primary-color;
+      color: $white-color;
+      font-size: $sm-font;
+      border-radius: $md-spacing;
+      padding: $sm-spacing $md-spacing;
+      border: 1px solid $white-color;
+      letter-spacing: 1px;
+      &:hover{
+        background-color: $black-color;
+      }
+    }
+  }
 }
