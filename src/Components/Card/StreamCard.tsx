@@ -1,13 +1,20 @@
 import { StreamCardInterface } from "../../Interface/StreamCardInterface";
+import WatchLive from "../../Pages/watchLive";
 import SampleButton from "../Button/SampleButton";
+import { useNavigate } from "react-router-dom";
 
 function StreamCard({
   image,
   cardTitle,
   cardDescription,
+  id,
 }: StreamCardInterface) {
+  const navigate = useNavigate();
   const streamHandler = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
+    navigate(`/watchlive/${cardTitle}`, {
+      state: { title: cardTitle, key: id },
+    });
   };
   return (
     <div className="stream__card__wrapper">

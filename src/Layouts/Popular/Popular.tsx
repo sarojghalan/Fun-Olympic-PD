@@ -15,6 +15,7 @@ function Popular() {
               image={item.image}
               cardTitle={item.cardTitle}
               cardDescription={item.cardDescription}
+              id={item.id}
             />
           </div>
         ))}

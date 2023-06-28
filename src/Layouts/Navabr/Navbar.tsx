@@ -4,10 +4,12 @@ import { logo } from "../../assets";
 import "../../Scss/Main.scss";
 import { NavLink, useNavigate } from "react-router-dom";
 import { ActiveUserContext } from "../../context/ActiveUser";
+import { useSnackbar } from "notistack";
 
 function Navbar() {
   const { activeUser, setActiveUser } = useContext(ActiveUserContext);
   const navigate = useNavigate();
+  const { enqueueSnackbar } = useSnackbar();
   const LoginHandler = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     navigate("/login");
@@ -21,6 +23,7 @@ function Navbar() {
     e.preventDefault();
     setActiveUser(null);
     navigate("/");
+    enqueueSnackbar("Successfully Logout.", { variant: "success" });
   };
 
   return (

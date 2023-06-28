@@ -1,5 +1,6 @@
-export interface StreamCardInterface{
-    image: string;
-    cardTitle: string;
-    cardDescription: string;
+export interface StreamCardInterface {
+  image: string;
+  cardTitle: string;
+  cardDescription: string;
+  id?: number;
 }
