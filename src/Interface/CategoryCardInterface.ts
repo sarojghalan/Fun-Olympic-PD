@@ -1,4 +1,5 @@
 export interface CategoryCardI{
     title: string;
-    iconClass : string
+    iconClass : string;
+    id: number;
 }

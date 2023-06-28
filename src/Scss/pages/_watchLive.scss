@@ -1,24 +1,22 @@
 @import "../abstract/_abstracts";
-.live__wrapper {
+.watch__live__wrapper {
   display: flex;
-  margin: $lg-spacing 0px;
+//   margin: $lg-spacing 0px;
   gap: 20px;
   align-items: center;
   justify-content: center;
-  height: auto;
-  .live__content {
+  .watch__live__content {
     flex: 1;
     text-align: center;
     border-radius: $md-spacing;
-    p{
-        font-size:$md-font;
-        text-decoration: wavy;
-        margin-bottom: $md-spacing;
+    p {
+      font-size: $md-font;
+      text-decoration: wavy;
+      margin-bottom: $md-spacing;
     }
-    .live__video__wrapper {
-      height: 350px;
+    .watch__live__video__wrapper {
+      height: 80vh;
       margin-bottom: $lg-spacing;
-      
     }
   }
 }
