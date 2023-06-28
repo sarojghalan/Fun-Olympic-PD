@@ -10,7 +10,7 @@ function WatchLive() {
   return (
     <div className="watch__live__wrapper">
       <div className="container">
-        <Title title={dataNavigator?.state.title} />
+        <Title title={dataNavigator?.state?.title} />
         <div className="watch__live__content">
           <div className="watch__live__video__wrapper">
             <ReactVideoPlayer

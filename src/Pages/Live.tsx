@@ -1,11 +1,20 @@
+import { useNavigate } from "react-router-dom";
 import SampleButton from "../Components/Button/SampleButton";
 import Title from "../Components/Title/Title";
 import { videoUrls } from "../data/videoUrl";
 import ReactVideoPlayer from "../Utils/ReactVideoPlayer";
 
 function Live() {
-  const liveHandler = (e: React.MouseEvent<HTMLButtonElement>) => {
+  const navigate = useNavigate();
+
+  const liveHandler = (
+    e: React.MouseEvent<HTMLButtonElement>,
+    keys: number
+  ) => {
     e.preventDefault();
+    navigate(`/watchLive/live${keys + 1}`, {
+      state: { title: `live ${keys + 1}`, key: keys },
+    });
   };
   return (
     <div className="container">
@@ -28,7 +37,7 @@ function Live() {
               title={`Watch LIVE ${keys + 1}`}
               nameOfClass=""
               handler={(e: React.MouseEvent<HTMLButtonElement>) =>
-                liveHandler(e)
+                liveHandler(e, keys)
               }
             />
           </div>
