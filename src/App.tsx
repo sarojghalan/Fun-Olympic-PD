@@ -1,14 +1,23 @@
+import React, { useContext } from "react";
 import "./Scss/Main.scss";
 import Navbar from "./Layouts/Navabr/Navbar";
 import Footer from "./Layouts/Footer/Footer";
 import Routing from "./Routes/Routing";
+import { AdminContext } from "./context/AdminContext";
 
 function App() {
+  const { isActive, setIsActive } = useContext(AdminContext);
   return (
     <>
-      <Navbar />
-      <Routing />
-      <Footer />
+      {isActive ? (
+        <p>fagg</p>
+      ) : (
+        <>
+          <Navbar />
+          <Routing />
+          <Footer />
+        </>
+      )}
     </>
   );
 }

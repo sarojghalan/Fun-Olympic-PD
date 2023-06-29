@@ -6,17 +6,17 @@ import "../../Scss/Main.scss";
 import { loginI } from "../../Interface/Auth/LoginInterface";
 import { UserContext } from "../../context/UserContext";
 import { useSnackbar } from "notistack";
-import { NavLink, useNavigate } from "react-router-dom";
-import { ActiveUserContext } from "../../context/ActiveUser";
+import { useNavigate } from "react-router-dom";
+import { AdminContext } from "../../context/AdminContext";
 
-function Login() {
+function AdminLogin() {
   const credentials: loginI = {
     email: "",
     password: "",
   };
+  const { isActive, setIsActive, admin, setAdmin } = useContext(AdminContext);
   const { enqueueSnackbar } = useSnackbar();
   const { user } = useContext(UserContext);
-  const { activeUser, setActiveUser } = useContext(ActiveUserContext);
   const navigate = useNavigate();
   const [loginCredentials, setLoginCredentials] = useState<loginI>(credentials);
 
@@ -32,37 +32,19 @@ function Login() {
 
   const loginHandler = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
-    const findUser = user?.find(
-      (item) => item.email === loginCredentials.email
-    );
     if (loginCredentials.email === "" || loginCredentials.password === "") {
       enqueueSnackbar("Empty Field Detected", { variant: "error" });
-    }
-    if (findUser) {
-      if (
-        findUser?.email === loginCredentials.email &&
-        findUser?.password === loginCredentials.password
-      ) {
-        enqueueSnackbar("You have successfully logged in", {
-          variant: "success",
-        });
-        setActiveUser({ ...findUser });
-        navigate("/");
-      }
-      if (findUser?.password !== loginCredentials.password) {
-        enqueueSnackbar("Incorrect Password", {
-          variant: "error",
-        });
-      }
-    }
-    if (
-      !findUser &&
-      loginCredentials.email !== "" &&
-      loginCredentials.password !== ""
+    } else if (
+      loginCredentials.email === "admin@gmail.com" &&
+      loginCredentials.password === "password"
     ) {
-      enqueueSnackbar("Cannot find your email. Create Account", {
-        variant: "error",
+      enqueueSnackbar("Successfully Logged In as ADMIN.", {
+        variant: "success",
       });
+      setIsActive(true);
+      setAdmin({ ...loginCredentials });
+    } else {
+      enqueueSnackbar("Not Verified as ADMIN.", { variant: "error" });
     }
   };
   return (
@@ -72,7 +54,7 @@ function Login() {
           <img src={logo} alt="logo" />
         </div>
         <div className="login__right__section">
-          <h3>Welcome Back to the Fun Olympics</h3>
+          <h3>Welcome Back Admin.</h3>
           <div className="login__form__section">
             <form>
               <div className="login__input__bar">
@@ -112,14 +94,9 @@ function Login() {
               </div>
             </form>
           </div>
-            <div className="admin__login">
-              <NavLink to='/admin'>
-              <p>Login as ADMIN</p>
-              </NavLink>
-            </div>
         </div>
       </div>
     </div>
   );
 }
-export default Login;
+export default AdminLogin;
