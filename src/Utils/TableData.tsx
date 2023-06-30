@@ -17,7 +17,8 @@ interface TableI {
 }
 
 interface TableArrI {
-  arr: TableI[] | null;
+  arr: TableI[] | null | undefined;
+  setArr: React.Dispatch<React.SetStateAction<TableI[] | null | undefined>>;
 }
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
@@ -40,7 +41,17 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
   },
 }));
 
-export default function CustomizedTables({ arr }: TableArrI) {
+export default function CustomizedTables({ arr, setArr }: TableArrI) {
+  const deleteHandler = (
+    e: React.MouseEvent<HTMLButtonElement>,
+    title: string
+  ) => {
+    console.log(title);
+    e.preventDefault();
+    const findingTitle = arr?.filter((item) => item.title !== title);
+    setArr(findingTitle);
+  };
+
   return (
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 700 }} aria-label="customized table">
@@ -77,6 +88,9 @@ export default function CustomizedTables({ arr }: TableArrI) {
                       background: "transparent",
                       marginLeft: "10px",
                     }}
+                    onClick={(e: React.MouseEvent<HTMLButtonElement>) =>
+                      deleteHandler(e, row?.title)
+                    }
                   >
                     <DeleteIcon />
                   </button>

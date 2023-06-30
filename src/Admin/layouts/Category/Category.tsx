@@ -35,7 +35,7 @@ function AdminCategory() {
       setCategoryData(initialState);
       setIsModalOpen(!isModalOpen);
     } else {
-      setAdminCategory([...adminCategory, categoryData]);
+      setAdminCategory([...adminCategory!, categoryData]);
       setCategoryData(initialState);
       setIsModalOpen(!isModalOpen);
     }
@@ -97,7 +97,7 @@ function AdminCategory() {
           </form>
         </BasicModal>
         <Container>
-          <CustomizedTables arr={adminCategory} />
+          <CustomizedTables arr={adminCategory} setArr={setAdminCategory} />
         </Container>
       </div>
     </>

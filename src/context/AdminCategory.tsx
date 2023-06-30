@@ -8,9 +8,9 @@ interface AdminCategoryI {
 interface AdminContextI {
   isLoading: boolean;
   setIsLoading: React.Dispatch<React.SetStateAction<boolean>>;
-  adminCategory: AdminCategoryI[] | null;
+  adminCategory: AdminCategoryI[] | null | undefined;
   setAdminCategory: React.Dispatch<
-    React.SetStateAction<AdminCategoryI[] | null>
+    React.SetStateAction<AdminCategoryI[] | null | undefined>
   >;
 }
 interface AdminCategoryProviderI {
@@ -23,9 +23,9 @@ export const AdminCategoryContext = createContext<AdminContextI>(
 
 const AdminCategoryProvider = ({ children }: AdminCategoryProviderI) => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
-  const [adminCategory, setAdminCategory] = useState<AdminCategoryI[] | null>(
-    null
-  );
+  const [adminCategory, setAdminCategory] = useState<
+    AdminCategoryI[] | null | undefined
+  >(null);
 
   useEffect(() => {
     setIsLoading(true);
