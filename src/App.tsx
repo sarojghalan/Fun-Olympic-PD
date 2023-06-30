@@ -4,13 +4,14 @@ import Navbar from "./Layouts/Navabr/Navbar";
 import Footer from "./Layouts/Footer/Footer";
 import Routing from "./Routes/Routing";
 import { AdminContext } from "./context/AdminContext";
+import Admin from "./Admin/admin";
 
 function App() {
   const { isActive, setIsActive } = useContext(AdminContext);
   return (
     <>
       {isActive ? (
-        <p>fagg</p>
+        <Admin />
       ) : (
         <>
           <Navbar />

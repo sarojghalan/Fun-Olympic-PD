@@ -1,0 +1,33 @@
+@import "../../../Scss/abstract/_abstracts";
+
+.sidebar__wrapper {
+  height: 100vh;
+  width: 250px;
+  .sidebar__content {
+    .sidebar__title {
+      text-align: center;
+      font-size: 22px;
+      border-bottom: 1px solid $tertiary-color;
+      padding: $md-spacing;
+    }
+    .sidebar__list {
+      .sidebar__list__content {
+        margin: $md-spacing $md-spacing;
+        p {
+          font-size: 20px;
+          span {
+            color: $primary-color;
+            margin-right: $md-spacing;
+          }
+          &:hover {
+            color: #1976d2;
+            font-weight: bold;
+          }
+          &:hover span {
+            color: #1976d2;
+          }
+        }
+      }
+    }
+  }
+}

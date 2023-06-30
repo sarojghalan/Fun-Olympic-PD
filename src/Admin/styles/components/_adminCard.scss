@@ -1,0 +1,27 @@
+@import "../../../Scss/abstract/_abstracts";
+
+.admin__card__wrapper {
+  background-color: $white-color;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  .admin__card__content {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    gap: 4px;
+    .card__icon {
+    }
+    .card__title {
+      font-size: $md-spacing;
+    //   margin-top: 2px;
+    }
+  }
+  h3 {
+    color: $admin-color;
+
+  }
+}
