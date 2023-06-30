@@ -5,6 +5,8 @@ import Modal from "@mui/material/Modal";
 
 interface ModalI {
   children: React.ReactNode;
+  isModalOpen: boolean;
+  setIsModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 const style = {
@@ -19,15 +21,26 @@ const style = {
   p: 4,
 };
 
-export default function BasicModal({ children }: ModalI) {
+export default function BasicModal({
+  children,
+  isModalOpen,
+  setIsModalOpen,
+}: ModalI) {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
+  React.useEffect(() => {
+    handleClose();
+  }, [isModalOpen]);
+
   return (
     <div>
-      <button className="admin__add" onClick={handleOpen}>Add New</button>
+      <button className="admin__add" onClick={handleOpen}>
+        Add New
+      </button>
       <Modal
+        id="close-modal"
         open={open}
         onClose={handleClose}
         aria-labelledby="modal-modal-title"

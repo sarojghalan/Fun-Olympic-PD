@@ -11,13 +11,13 @@ import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
 
 interface TableI {
-  id: number;
   title: string;
   url: string;
+  iconClass: string;
 }
 
 interface TableArrI {
-  arr: TableI[];
+  arr: TableI[] | null;
 }
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
@@ -53,10 +53,10 @@ export default function CustomizedTables({ arr }: TableArrI) {
           </TableRow>
         </TableHead>
         <TableBody>
-          {arr.map((row) => (
-            <StyledTableRow key={row.title}>
+          {arr?.map((row) => (
+            <StyledTableRow key={row?.title}>
               <StyledTableCell component="th" scope="row">
-                {row.id}
+                {row?.title}
               </StyledTableCell>
               <StyledTableCell align="right">{row.title}</StyledTableCell>
               <StyledTableCell align="right">{row.url}</StyledTableCell>
