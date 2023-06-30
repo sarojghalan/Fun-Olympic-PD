@@ -4,8 +4,11 @@ import HomeIcon from "@mui/icons-material/Home";
 import CategoryIcon from "@mui/icons-material/Category";
 import BookmarkIcon from "@mui/icons-material/Bookmark";
 import LiveTvIcon from "@mui/icons-material/LiveTv";
+import { NavLink } from "react-router-dom";
 
 function SideBar() {
+  console.log("window : ", window.location.pathname);
+  const pathName = window.location.pathname;
   return (
     <div className="sidebar__wrapper">
       <div className="sidebar__content">
@@ -14,35 +17,52 @@ function SideBar() {
         </div>
         <div className="sidebar__list">
           <div className="sidebar__list__content">
+            {/* {pathName == "/" ? (
+              <p className="active">
+                <span>
+                  <HomeIcon />
+                </span>
+                Home
+              </p>
+            ) : ( */}
+              <p>
+                <NavLink to='/'>
+                  <span>
+                    <HomeIcon />
+                  </span>
+                  Home
+                </NavLink>
+              </p>
+            {/* )} */}
+          </div>
+          <div className="sidebar__list__content">
             <p>
-              <span>
-                <HomeIcon />
-              </span>
-              Home
+              <NavLink to="/category">
+                <span>
+                  <CategoryIcon />
+                </span>
+                Category
+              </NavLink>
             </p>
           </div>
           <div className="sidebar__list__content">
             <p>
-              <span>
-                <CategoryIcon />
-              </span>
-              Category
+              <NavLink to="/favorite">
+                <span>
+                  <BookmarkIcon />
+                </span>
+                Favorite
+              </NavLink>
             </p>
           </div>
           <div className="sidebar__list__content">
             <p>
-              <span>
-                <BookmarkIcon />
-              </span>
-              Favorite
-            </p>
-          </div>
-          <div className="sidebar__list__content">
-            <p>
-              <span>
-                <LiveTvIcon />
-              </span>
-              Live
+              <NavLink to="/live">
+                <span>
+                  <LiveTvIcon />
+                </span>
+                Live
+              </NavLink>
             </p>
           </div>
         </div>

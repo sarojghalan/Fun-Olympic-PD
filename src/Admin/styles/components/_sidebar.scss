@@ -13,6 +13,13 @@
     .sidebar__list {
       .sidebar__list__content {
         margin: $md-spacing $md-spacing;
+        .active{
+          color: $admin-color;
+          font-weight: bold;
+          span{
+            color: $admin-color;
+          }
+        }
         p {
           font-size: 20px;
           span {
