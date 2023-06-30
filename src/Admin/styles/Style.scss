@@ -20,3 +20,31 @@
     }
   }
 }
+.admin__add__form{
+  text-align: center;
+  .form__input{
+    margin: 10px 0px;
+    input{
+      width: 100%;
+      padding: 4px 12px;
+      &:focus{
+        outline: none;
+      }
+    }
+  }
+  .form__btn{
+    width: 100&;
+    button{
+      border: none;
+      padding: 4px 16px;
+      background-color: $admin-color;
+      color: $white-color;
+      &:hover{
+        background-color: $primary-color;
+      }
+    }
+  }
+  p{
+    font-size: $md-font;
+  }
+}

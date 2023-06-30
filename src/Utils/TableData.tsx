@@ -62,12 +62,24 @@ export default function CustomizedTables({ arr }: TableArrI) {
               <StyledTableCell align="right">{row.url}</StyledTableCell>
               <StyledTableCell align="right">
                 <div className="d-flex justify-content-center">
-                  <p>
+                  <button
+                    style={{
+                      border: "none",
+                      background: "transparent",
+                      marginLeft: "10px",
+                    }}
+                  >
                     <EditIcon />
-                  </p>
-                  <p>
+                  </button>
+                  <button
+                    style={{
+                      border: "none",
+                      background: "transparent",
+                      marginLeft: "10px",
+                    }}
+                  >
                     <DeleteIcon />
-                  </p>
+                  </button>
                 </div>
               </StyledTableCell>
             </StyledTableRow>

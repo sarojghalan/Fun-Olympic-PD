@@ -1,8 +1,7 @@
 import { Container } from "@mui/material";
 import CustomizedTables from "../../../Utils/TableData";
+import BasicModal from "../../components/modal/Modal";
 import "../../styles/Style.scss";
-import Title from "../../../Components/Title/Title";
-import { CategoryData } from "../../../data/categoryData";
 
 interface adminCategoryI {
   title: string;
@@ -35,12 +34,32 @@ const AdminCategoryArr: adminCategoryI[] = [
 
 function AdminCategory() {
   return (
-    <div className="admin__category__wrapper">
-      <button className="admin__add">Add New</button>
-      <Container>
-        <CustomizedTables arr={AdminCategoryArr} />
-      </Container>
-    </div>
+    <>
+      <div className="admin__category__wrapper">
+        {" "}
+        <BasicModal>
+          <form className="admin__add__form" action="">
+            <p>Add Category</p>
+            <div className="form__input">
+              <label htmlFor="">TITLE</label>
+              <br />
+              <input type="text" placeholder="title" />
+            </div>
+            <div className="form__input">
+              <label htmlFor="">URL</label>
+              <br />
+              <input type="text" placeholder="title" />
+            </div>
+            <div className="form__btn">
+              <button>Add</button>
+            </div>
+          </form>
+        </BasicModal>
+        <Container>
+          <CustomizedTables arr={AdminCategoryArr} />
+        </Container>
+      </div>
+    </>
   );
 }
 
