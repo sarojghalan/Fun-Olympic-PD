@@ -36,7 +36,7 @@ export default function BasicModal({
 
   return (
     <div>
-      <button className="admin__add" onClick={handleOpen}>
+      <button id="modal-btn-id" className="admin__add" onClick={handleOpen}>
         Add New
       </button>
       <Modal

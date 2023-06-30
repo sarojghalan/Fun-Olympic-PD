@@ -20,22 +20,23 @@ function AdminCategory() {
   };
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
 
-  const [categoryData, setCategoryData] =
-    useState<adminCategoryI>(initialState);
+  const [categoryData, setCategoryData] = useState<adminCategoryI | undefined>(
+    initialState
+  );
 
   const categoryHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
-    setCategoryData({ ...categoryData, [e.target.name]: e.target.value });
+    setCategoryData({ ...categoryData!, [e.target.name]: e.target.value });
   };
 
   const addHandler = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     if (adminCategory === null) {
-      setAdminCategory([{ ...categoryData }]);
+      setAdminCategory([{ ...categoryData! }]);
       setCategoryData(initialState);
       setIsModalOpen(!isModalOpen);
     } else {
-      setAdminCategory([...adminCategory!, categoryData]);
+      setAdminCategory([...adminCategory!, categoryData!]);
       setCategoryData(initialState);
       setIsModalOpen(!isModalOpen);
     }
@@ -56,6 +57,7 @@ function AdminCategory() {
                 type="text"
                 placeholder="title"
                 name="title"
+                value={categoryData?.title}
                 onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
                   categoryHandler(e)
                 }
@@ -66,8 +68,9 @@ function AdminCategory() {
               <br />
               <input
                 type="text"
-                placeholder="title"
+                placeholder="url"
                 name="url"
+                value={categoryData?.url}
                 onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
                   categoryHandler(e)
                 }
@@ -80,6 +83,7 @@ function AdminCategory() {
                 type="text"
                 placeholder="Icon Class"
                 name="iconClass"
+                value={categoryData?.iconClass}
                 onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
                   categoryHandler(e)
                 }
@@ -97,7 +101,11 @@ function AdminCategory() {
           </form>
         </BasicModal>
         <Container>
-          <CustomizedTables arr={adminCategory} setArr={setAdminCategory} />
+          <CustomizedTables
+            arr={adminCategory}
+            setArr={setAdminCategory}
+            itemData={setCategoryData}
+          />
         </Container>
       </div>
     </>

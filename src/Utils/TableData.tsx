@@ -19,6 +19,7 @@ interface TableI {
 interface TableArrI {
   arr: TableI[] | null | undefined;
   setArr: React.Dispatch<React.SetStateAction<TableI[] | null | undefined>>;
+  itemData: React.Dispatch<React.SetStateAction<TableI | undefined>>;
 }
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
@@ -41,15 +42,23 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
   },
 }));
 
-export default function CustomizedTables({ arr, setArr }: TableArrI) {
+export default function CustomizedTables({ arr, setArr, itemData }: TableArrI) {
   const deleteHandler = (
     e: React.MouseEvent<HTMLButtonElement>,
     title: string
   ) => {
-    console.log(title);
     e.preventDefault();
     const findingTitle = arr?.filter((item) => item.title !== title);
     setArr(findingTitle);
+  };
+
+  const editHandler = (
+    e: React.MouseEvent<HTMLButtonElement>,
+    title: string
+  ) => {
+    e.preventDefault();
+    console.log(document.getElementById("modal-btn-id")?.click());
+    itemData(arr?.find((item) => item.title === title));
   };
 
   return (
@@ -79,6 +88,9 @@ export default function CustomizedTables({ arr, setArr }: TableArrI) {
                       background: "transparent",
                       marginLeft: "10px",
                     }}
+                    onClick={(e: React.MouseEvent<HTMLButtonElement>) =>
+                      editHandler(e, row?.title)
+                    }
                   >
                     <EditIcon />
                   </button>
