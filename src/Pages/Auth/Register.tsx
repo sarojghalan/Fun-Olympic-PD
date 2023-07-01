@@ -75,8 +75,6 @@ function Register() {
     }
   };
 
-  console.log("register : ", registerCredentials);
-
   return (
     <div className="container">
       <div className="register__wrapper">

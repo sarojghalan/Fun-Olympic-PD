@@ -3,10 +3,18 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 
+interface dataI {
+  title: string;
+  iconClass: string;
+  url: string;
+}
+
 interface ModalI {
   children: React.ReactNode;
   isModalOpen: boolean;
   setIsModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  data: dataI | undefined;
+  setData: React.Dispatch<React.SetStateAction<dataI | undefined>>;
 }
 
 const style = {
@@ -25,10 +33,15 @@ export default function BasicModal({
   children,
   isModalOpen,
   setIsModalOpen,
+  data,
+  setData,
 }: ModalI) {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
+  const handleClose = () => {
+    setOpen(false);
+    setData({ title: "", iconClass: "", url: "" });
+  };
 
   React.useEffect(() => {
     handleClose();

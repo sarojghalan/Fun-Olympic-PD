@@ -20,6 +20,10 @@ interface TableArrI {
   arr: TableI[] | null | undefined;
   setArr: React.Dispatch<React.SetStateAction<TableI[] | null | undefined>>;
   itemData: React.Dispatch<React.SetStateAction<TableI | undefined>>;
+  editMode: boolean;
+  setEditMode: React.Dispatch<React.SetStateAction<boolean>>;
+  objFindingElem: string;
+  setObjFindingElem: React.Dispatch<React.SetStateAction<string>>;
 }
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
@@ -42,7 +46,15 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
   },
 }));
 
-export default function CustomizedTables({ arr, setArr, itemData }: TableArrI) {
+export default function CustomizedTables({
+  arr,
+  setArr,
+  itemData,
+  editMode,
+  setEditMode,
+  objFindingElem,
+  setObjFindingElem,
+}: TableArrI) {
   const deleteHandler = (
     e: React.MouseEvent<HTMLButtonElement>,
     title: string
@@ -59,6 +71,9 @@ export default function CustomizedTables({ arr, setArr, itemData }: TableArrI) {
     e.preventDefault();
     console.log(document.getElementById("modal-btn-id")?.click());
     itemData(arr?.find((item) => item.title === title));
+    setEditMode(!editMode);
+    setObjFindingElem(title);
+    // setArr(arr?.filter((item) => item.title !== title));
   };
 
   return (

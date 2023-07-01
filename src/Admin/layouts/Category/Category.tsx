@@ -11,14 +11,16 @@ interface adminCategoryI {
   iconClass: string;
 }
 
+const initialState: adminCategoryI = {
+  title: "",
+  url: "",
+  iconClass: "",
+};
 function AdminCategory() {
   const { adminCategory, setAdminCategory } = useContext(AdminCategoryContext);
-  const initialState: adminCategoryI = {
-    title: "",
-    url: "",
-    iconClass: "",
-  };
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+  const [isEditMode, setIsEditMode] = useState<boolean>(false);
+  const [objFindingElem, setObjFindingElem] = useState<string>("");
 
   const [categoryData, setCategoryData] = useState<adminCategoryI | undefined>(
     initialState
@@ -31,23 +33,31 @@ function AdminCategory() {
 
   const addHandler = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
-    if (adminCategory === null) {
-      setAdminCategory([{ ...categoryData! }]);
-      setCategoryData(initialState);
-      setIsModalOpen(!isModalOpen);
+    if (isEditMode) {
+      console.log(objFindingElem);
     } else {
-      setAdminCategory([...adminCategory!, categoryData!]);
-      setCategoryData(initialState);
-      setIsModalOpen(!isModalOpen);
+      if (adminCategory === null) {
+        setAdminCategory([{ ...categoryData! }]);
+        setCategoryData(initialState);
+        setIsModalOpen(!isModalOpen);
+      } else {
+        setAdminCategory([...adminCategory!, categoryData!]);
+        setCategoryData(initialState);
+        setIsModalOpen(!isModalOpen);
+      }
     }
   };
 
-  console.log(categoryData);
   return (
     <>
       <div className="admin__category__wrapper">
         {" "}
-        <BasicModal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen}>
+        <BasicModal
+          isModalOpen={isModalOpen}
+          setIsModalOpen={setIsModalOpen}
+          data={categoryData}
+          setData={setCategoryData}
+        >
           <form className="admin__add__form" action="">
             <p>Add Category</p>
             <div className="form__input">
@@ -55,7 +65,7 @@ function AdminCategory() {
               <br />
               <input
                 type="text"
-                placeholder="title"
+                placeholder="enter title ..."
                 name="title"
                 value={categoryData?.title}
                 onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
@@ -68,7 +78,7 @@ function AdminCategory() {
               <br />
               <input
                 type="text"
-                placeholder="url"
+                placeholder="enter url ..."
                 name="url"
                 value={categoryData?.url}
                 onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
@@ -81,7 +91,7 @@ function AdminCategory() {
               <br />
               <input
                 type="text"
-                placeholder="Icon Class"
+                placeholder="enter icon Class ..."
                 name="iconClass"
                 value={categoryData?.iconClass}
                 onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
@@ -105,6 +115,10 @@ function AdminCategory() {
             arr={adminCategory}
             setArr={setAdminCategory}
             itemData={setCategoryData}
+            editMode={isEditMode}
+            setEditMode={setIsEditMode}
+            objFindingElem={objFindingElem}
+            setObjFindingElem={setObjFindingElem}
           />
         </Container>
       </div>

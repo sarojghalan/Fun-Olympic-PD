@@ -28,8 +28,6 @@ function Login() {
     });
   };
 
-  console.log("user data : ", user);
-
   const loginHandler = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     const findUser = user?.find(
