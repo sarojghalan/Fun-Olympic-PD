@@ -91,10 +91,10 @@ export default function CustomizedTables({
           </TableRow>
         </TableHead>
         <TableBody>
-          {arr?.map((row) => (
+          {arr?.map((row, keys) => (
             <StyledTableRow key={row?.title}>
               <StyledTableCell component="th" scope="row">
-                {row?.title}
+                {keys + 1}
               </StyledTableCell>
               <StyledTableCell align="right">{row.title}</StyledTableCell>
               <StyledTableCell align="right">{row.url}</StyledTableCell>

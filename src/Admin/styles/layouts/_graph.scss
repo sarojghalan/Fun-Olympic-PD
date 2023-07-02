@@ -1,4 +1,11 @@
 @import "../../../Scss/abstract/_abstracts";
 .graph__wrapper{
-    
+    canvas{
+        height: 75vh !important;
+        width: 100% !important;
+    }
+}
+.graph__watch__time{
+    font-size: $md-font;
+    font-weight: bold;
 }

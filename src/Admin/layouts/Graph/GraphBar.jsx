@@ -4,28 +4,26 @@ import { Chart as ChartJS } from "chart.js/auto";
 
 function GraphBar() {
   const dataAll = [
-    { id: 1, name: "Product 1", users: 3, hours: 1000 },
-    { id: 2, name: "Product 2", users: 2, hours: 2000 },
-    { id: 3, name: "Product 3", users: 4, hours: 1500 },
-    { id: 4, name: "Product 4", users: 1, hours: 3000 },
-    { id: 5, name: "Product 5", users: 5, hours: 2000 },
+    { id: 1, name: "User 1", users: 3, hours: 9 },
+    { id: 2, name: "User 2", users: 2, hours: 2 },
+    { id: 3, name: "User 3", users: 4, hours: 8 },
+    { id: 4, name: "User 4", users: 1, hours: 4 },
+    { id: 5, name: "User 5", users: 5, hours: 6 },
   ];
 
   const data = {
-    labels: dataAll.map((data) => data.users),
+    labels: dataAll.map((data) => data.name),
     datasets: [
       {
         label: "hours",
         data: dataAll.map((data) => data.hours),
         backgroundColor: [
           "rgba(75,192,192,1)",
-          "#ecf0f1",
+          "purple",
           "#50AF95",
           "#f3ba2f",
           "#2a71d0",
         ],
-        borderColor: "black",
-        borderWidth: 2,
       },
     ],
   };
@@ -60,6 +58,7 @@ function GraphBar() {
       {/* <Line data={data} /> */}
       <Bar data={data} />
       </div>
+      <p className="graph__watch__time">-- User Watch Time --</p>
     </div>
   );
 }

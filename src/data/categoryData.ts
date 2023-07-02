@@ -3,7 +3,7 @@ import { CategoryCardI } from "../Interface/CategoryCardInterface";
 export const CategoryData: CategoryCardI[] = [
   {
     id: 0,
-    title: "Swimming",
+    title: "Swimming", 
     iconClass: "fa-solid fa-person-swimming", 
   },
   {
