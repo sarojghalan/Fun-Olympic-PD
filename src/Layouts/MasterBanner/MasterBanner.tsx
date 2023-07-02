@@ -13,16 +13,16 @@ function MasterBanner() {
     <div className="master__banner__wrapper">
       <div className="container">
         <div className="row">
-          <div className="col-12 col-lg-8 col-md-12 col-sm-12 ">
+          <div className="col-12 col-lg-12 col-md-12 col-sm-12 ">
             <div className="master__banner__left__section">
               {activeUser ? (
                 <ReactVideoPlayer
-                  playing={videoUrls[0]?.playing}
-                  controls={videoUrls[0]?.controls}
-                  muted={videoUrls[0]?.muted}
-                  height={videoUrls[0]?.height}
-                  width={videoUrls[0]?.width}
-                  url={videoUrls[0]?.url}
+                  playing={videoUrls[3]?.playing}
+                  controls={videoUrls[3]?.controls}
+                  muted={videoUrls[3]?.muted}
+                  height="85vh"
+                  width="100%"
+                  url={videoUrls[3]?.url}
                 />
               ) : (
                 <div className="master__banner__img__wrapper">
@@ -46,7 +46,7 @@ function MasterBanner() {
               )}
             </div>
           </div>
-          <div className="col-lg-4 col-md-12 col-sm-6 col-12">
+          {/* <div className="col-lg-4 col-md-12 col-sm-6 col-12">
             <Title title="Related Videos" />
             {videoUrls.slice(1).map((item) => (
               <>
@@ -84,7 +84,7 @@ function MasterBanner() {
                 )}
               </>
             ))}
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

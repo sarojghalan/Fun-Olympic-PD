@@ -17,7 +17,7 @@ export const videoUrls: ReactPlayerInterface[] = [
     controls: false,
     height: "23.3vh",
     width: "80%",
-    url: "https://www.youtube.com/watch?v=rFFuXHRPMNI",
+    url: "https://www.youtube.com/watch?v=UJpCCeDgXoY",
     img: liveTwo,
   },
   {
@@ -26,7 +26,7 @@ export const videoUrls: ReactPlayerInterface[] = [
     controls: false,
     height: "23.3vh",
     width: "80%",
-    url: "https://www.youtube.com/watch?v=rFFuXHRPMNI",
+    url: "https://www.youtube.com/watch?v=A_lTonMNJ54",
     img: liveThree,
   },
   {
@@ -35,7 +35,7 @@ export const videoUrls: ReactPlayerInterface[] = [
     controls: false,
     height: "23.3vh",
     width: "80%",
-    url: "https://www.youtube.com/watch?v=rFFuXHRPMNI",
+    url: "https://www.youtube.com/watch?v=vP9QpcqzSns",
     img: liveFour,
   },
 ];

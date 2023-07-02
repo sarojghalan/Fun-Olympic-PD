@@ -4,7 +4,7 @@ export const CategoryData: CategoryCardI[] = [
   {
     id: 0,
     title: "Swimming",
-    iconClass: "fa-solid fa-person-swimming",
+    iconClass: "fa-solid fa-person-swimming", 
   },
   {
     id: 1,
