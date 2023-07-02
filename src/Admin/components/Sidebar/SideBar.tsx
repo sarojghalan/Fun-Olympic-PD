@@ -57,7 +57,7 @@ function SideBar() {
           </div>
           <div className="sidebar__list__content">
             <p>
-              <NavLink to="/live">
+              <NavLink to="/analytics">
                 <span>
                   <AnalyticsIcon />
                 </span>

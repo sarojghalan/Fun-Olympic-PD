@@ -1,8 +1,8 @@
 // import { Bar } from "@ant-design/charts";
-import { Bar, Line } from "react-chartjs-2";
+import { Bar, Doughnut  } from "react-chartjs-2";
 import { Chart as ChartJS } from "chart.js/auto";
 
-function GraphBar() {
+function Analytics() {
   const dataAll = [
     { id: 1, name: "User 1", users: 3, hours: 9 },
     { id: 2, name: "User 2", users: 2, hours: 2 },
@@ -41,11 +41,11 @@ function GraphBar() {
     <div className="admin__category__wrapper">
       {/* <Bar {...config} /> */}
       <div className="graph__wrapper">
-      {/* <Line data={data} /> */}
-      <Bar data={data} />
+        <Doughnut  data={data} />
+        {/* <Bar data={data} /> */}
       </div>
       <p className="graph__watch__time">-- User Watch Time --</p>
     </div>
   );
 }
-export default GraphBar;
+export default Analytics;
