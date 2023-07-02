@@ -4,6 +4,7 @@ import CustomizedTables from "../../../Utils/TableData";
 import BasicModal from "../../components/modal/Modal";
 import "../../styles/Style.scss";
 import { AdminCategoryContext } from "../../../context/AdminCategory";
+import { useSnackbar } from "notistack";
 
 interface adminCategoryI {
   title: string;
@@ -17,6 +18,7 @@ const initialState: adminCategoryI = {
   iconClass: "",
 };
 function AdminCategory() {
+  const { enqueueSnackbar } = useSnackbar();
   const { adminCategory, setAdminCategory } = useContext(AdminCategoryContext);
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const [isEditMode, setIsEditMode] = useState<boolean>(false);
@@ -28,7 +30,10 @@ function AdminCategory() {
   );
 
   useEffect(() => {
-    setAdminCategory([...adminCategory!, categoryData!]);
+    if (isDataReloader) {
+      setAdminCategory([...adminCategory!, categoryData!]);
+      enqueueSnackbar("Category Updated Successfully", { variant: "success" });
+    }
   }, [isDataReloader]);
 
   const categoryHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -45,16 +50,22 @@ function AdminCategory() {
       );
       setIsDataReloader(!isDataReloader);
       setIsModalOpen(!isModalOpen);
-      setIsEditMode(!isEditMode);
+      setIsEditMode(false);
     } else {
       if (adminCategory === null) {
         setAdminCategory([{ ...categoryData! }]);
         setCategoryData(initialState);
         setIsModalOpen(!isModalOpen);
+        enqueueSnackbar("Category added successfully. ", {
+          variant: "success",
+        });
       } else {
         setAdminCategory([...adminCategory!, categoryData!]);
         setCategoryData(initialState);
         setIsModalOpen(!isModalOpen);
+        enqueueSnackbar("Category added successfully. ", {
+          variant: "success",
+        });
       }
     }
   };
@@ -116,7 +127,7 @@ function AdminCategory() {
                   addHandler(e)
                 }
               >
-                Add
+                {isEditMode ? "Update" : "Add"}
               </button>
             </div>
           </form>

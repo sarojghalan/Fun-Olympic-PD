@@ -9,6 +9,7 @@ import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
+import { useSnackbar } from "notistack";
 
 interface TableI {
   title: string;
@@ -55,6 +56,7 @@ export default function CustomizedTables({
   objFindingElem,
   setObjFindingElem,
 }: TableArrI) {
+  const { enqueueSnackbar } = useSnackbar();
   const deleteHandler = (
     e: React.MouseEvent<HTMLButtonElement>,
     title: string
@@ -62,6 +64,7 @@ export default function CustomizedTables({
     e.preventDefault();
     const findingTitle = arr?.filter((item) => item.title !== title);
     setArr(findingTitle);
+    enqueueSnackbar("Deleted Successfully .", { variant: "success" });
   };
 
   const editHandler = (
