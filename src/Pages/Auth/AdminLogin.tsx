@@ -28,7 +28,6 @@ function AdminLogin() {
     });
   };
 
-
   const loginHandler = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     if (loginCredentials.email === "" || loginCredentials.password === "") {
@@ -42,6 +41,7 @@ function AdminLogin() {
       });
       setIsActive(true);
       setAdmin({ ...loginCredentials });
+      navigate("/");
     } else {
       enqueueSnackbar("Not Verified as ADMIN.", { variant: "error" });
     }

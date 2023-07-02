@@ -21,10 +21,15 @@ function AdminCategory() {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const [isEditMode, setIsEditMode] = useState<boolean>(false);
   const [objFindingElem, setObjFindingElem] = useState<string>("");
+  const [isDataReloader, setIsDataReloader] = useState<boolean>(false);
 
   const [categoryData, setCategoryData] = useState<adminCategoryI | undefined>(
     initialState
   );
+
+  useEffect(() => {
+    setAdminCategory([...adminCategory!, categoryData!]);
+  }, [isDataReloader]);
 
   const categoryHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
@@ -34,7 +39,13 @@ function AdminCategory() {
   const addHandler = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     if (isEditMode) {
-      console.log(objFindingElem);
+      console.log("edit mode true");
+      setAdminCategory(
+        adminCategory?.filter((item) => item.title !== objFindingElem)
+      );
+      setIsDataReloader(!isDataReloader);
+      setIsModalOpen(!isModalOpen);
+      setIsEditMode(!isEditMode);
     } else {
       if (adminCategory === null) {
         setAdminCategory([{ ...categoryData! }]);

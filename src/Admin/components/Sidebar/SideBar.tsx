@@ -7,10 +7,9 @@ import LiveTvIcon from "@mui/icons-material/LiveTv";
 import { NavLink } from "react-router-dom";
 
 function SideBar() {
-  console.log("window : ", window.location.pathname);
   const pathName = window.location.pathname;
   return (
-    <div className="sidebar__wrapper">
+    <div className="sidebar__wrapper"> 
       <div className="sidebar__content">
         <div className="sidebar__title">
           <h3>Fun Olympics</h3>
@@ -62,6 +61,26 @@ function SideBar() {
                   <LiveTvIcon />
                 </span>
                 Live
+              </NavLink>
+            </p>
+          </div>
+          <div className="sidebar__list__content">
+            <p>
+              <NavLink to="/live">
+                <span>
+                  <LiveTvIcon />
+                </span>
+                Analytics
+              </NavLink>
+            </p>
+          </div>
+          <div className="sidebar__list__content">
+            <p>
+              <NavLink to="/live">
+                <span>
+                  <LiveTvIcon />
+                </span>
+                Total
               </NavLink>
             </p>
           </div>
