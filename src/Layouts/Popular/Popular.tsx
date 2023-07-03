@@ -1,8 +1,11 @@
+import React, { useContext } from "react";
 import StreamCard from "../../Components/Card/StreamCard";
 import Title from "../../Components/Title/Title";
 import { dummyStream } from "../../data/dummyStream";
+import { AdminCategoryContext } from "../../context/AdminCategory";
 
 function Popular() {
+  const { adminCategory } = useContext(AdminCategoryContext);
   return (
     <div className="container">
       <div className="popular__wrapper">

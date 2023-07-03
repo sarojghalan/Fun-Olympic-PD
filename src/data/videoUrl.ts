@@ -27,7 +27,7 @@ export const videoUrls: ReactPlayerInterface[] = [
     height: "23.3vh",
     width: "80%",
     url: "https://www.youtube.com/watch?v=A_lTonMNJ54",
-    img: liveThree,
+    img: liveThree, 
   },
   {
     muted: true,

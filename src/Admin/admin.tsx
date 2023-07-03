@@ -12,7 +12,7 @@ function Admin() {
   const { isActive, setIsActive } = useContext(AdminContext);
   const logoutHandler = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
-    setIsActive(!isActive);
+    setIsActive(false);
     enqueueSnackbar("Admin Logout Successfully .", { variant: "success" });
     navigate("/login");
   };

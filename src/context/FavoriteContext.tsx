@@ -8,8 +8,10 @@ interface FavoriteI {
 interface UserContextI {
   isLoading: boolean;
   setIsLoading: React.Dispatch<React.SetStateAction<boolean>>;
-  favorite: FavoriteI[] | null;
-  setFavorite: React.Dispatch<React.SetStateAction<FavoriteI[] | null>>;
+  favorite: FavoriteI[] | null | undefined;
+  setFavorite: React.Dispatch<
+    React.SetStateAction<FavoriteI[] | null | undefined>
+  >;
 }
 
 interface FavoriteProviderI {
@@ -20,7 +22,9 @@ export const FavoriteContext = createContext<UserContextI>({} as UserContextI);
 
 const FavoriteProvider = ({ children }: FavoriteProviderI) => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
-  const [favorite, setFavorite] = useState<FavoriteI[] | null>(null);
+  const [favorite, setFavorite] = useState<FavoriteI[] | null | undefined>(
+    null
+  );
 
   useEffect(() => {
     setIsLoading(true);

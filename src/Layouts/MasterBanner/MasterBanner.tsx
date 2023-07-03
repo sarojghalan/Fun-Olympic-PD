@@ -25,7 +25,7 @@ function MasterBanner() {
       enqueueSnackbar("Added to the favorite.", { variant: "success" });
     } else {
       setFavorite([
-        ...favorite,
+        ...favorite!,
         { url: videoUrls[3]?.url, title: "Racing", id: 1 },
       ]);
       enqueueSnackbar("Added to the favorite.", { variant: "success" });
