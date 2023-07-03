@@ -1,7 +1,7 @@
 @import "../abstract/_abstracts";
 .watch__live__wrapper {
   display: flex;
-//   margin: $lg-spacing 0px;
+  //   margin: $lg-spacing 0px;
   gap: 20px;
   align-items: center;
   justify-content: center;
@@ -18,5 +18,69 @@
       height: 80vh;
       margin-bottom: $lg-spacing;
     }
+  }
+}
+.comment__content {
+  height: 62vh;
+  overflow-y: scroll;
+  ul{
+    padding: 4px 16px;
+    li{
+      list-style-type: none;
+      // background-color: $admin-color;
+      margin: 4px;
+      // display: initial;
+      span{
+        background-color: $primary-color;
+        color: $white-color;
+        padding: 2px 4px;
+        border-radius: 50%;
+        font-size: 12px;
+        margin-right: $md-spacing;
+      }
+    }
+  }
+}
+.comment__section {
+  height: 80vh;
+  border: 1px solid black;
+  .top__chat {
+    text-align: center;
+    padding: 8px 0px;
+  }
+  hr {
+    margin: 0;
+  }
+  .comment__input__section {
+    width: 100%;
+    display: flex;
+    gap: 8px;
+    padding: 8px 12px 0px;
+    span {
+      background-color: $admin-color;
+      color: white;
+      padding: 4px 8px;
+      border-radius: 50%;
+    }
+    p {
+      padding-top: 4px;
+    }
+    input {
+      width: 90%;
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+}
+.comment__btn {
+  text-align: center;
+  margin-top: 8px;
+  button {
+    border-radius: $sm-spacing;
+    border: none;
+    color: $white-color;
+    background-color: $admin-color;
+    padding: 2px 8px;
   }
 }

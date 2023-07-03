@@ -64,8 +64,8 @@ function Navbar() {
               >
                 Favorite{" "}
                 {favorite !== null && (
-                    <sup className="count__value">{favorite?.length}</sup>
-                  )}
+                  <sup className="count__value">{favorite?.length}</sup>
+                )}
               </NavLink>
             </li>
             <li className="nav-item">
