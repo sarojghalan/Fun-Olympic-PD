@@ -38,9 +38,37 @@
       padding: $sm-spacing $md-spacing;
       border: 1px solid $white-color;
       letter-spacing: 1px;
-      &:hover{
+      &:hover {
         background-color: $black-color;
       }
+    }
+  }
+}
+.content__description {
+  padding-top: $md-spacing;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: $md-spacing;
+  .content__desc__img {
+    img {
+      border-radius:16px;
+      height: 40px;
+      width: 40px;
+      object-fit: cover;
+    }
+  }
+  p {
+    font-weight: bold;
+  }
+  .content__desc__btn {
+    border: none;
+    background-color: $primary-color;
+    color: white;
+    border-radius: $sm-spacing ;
+    padding: 4px 12px;
+    &:hover{
+      background-color: $admin-color;
     }
   }
 }

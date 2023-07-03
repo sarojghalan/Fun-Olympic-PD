@@ -22,6 +22,10 @@
           color: $white-color !important;
           border-radius: $s-spacing;
         }
+        &:hover .count__value {
+          background-color: $white-color;
+          color: $black-color;
+        }
       }
     }
   }
@@ -29,4 +33,10 @@
     gap: $lg-spacing;
     display: flex;
   }
+}
+.count__value {
+  padding: 4px 8px;
+  color: white;
+  background-color: $primary-color;
+  border-radius: 50%;
 }

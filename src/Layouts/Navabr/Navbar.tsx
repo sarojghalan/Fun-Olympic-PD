@@ -5,9 +5,11 @@ import "../../Scss/Main.scss";
 import { NavLink, useNavigate } from "react-router-dom";
 import { ActiveUserContext } from "../../context/ActiveUser";
 import { useSnackbar } from "notistack";
+import { FavoriteContext } from "../../context/FavoriteContext";
 
 function Navbar() {
   const { activeUser, setActiveUser } = useContext(ActiveUserContext);
+  const { favorite, setFavorite } = useContext(FavoriteContext);
   const navigate = useNavigate();
   const { enqueueSnackbar } = useSnackbar();
   const LoginHandler = (e: React.MouseEvent<HTMLButtonElement>) => {
@@ -60,7 +62,10 @@ function Navbar() {
                 aria-current="page"
                 to="/favorite"
               >
-                Favorite
+                Favorite{" "}
+                {favorite !== null && (
+                  <sup className="count__value">{favorite?.length}</sup>
+                )}
               </NavLink>
             </li>
             <li className="nav-item">

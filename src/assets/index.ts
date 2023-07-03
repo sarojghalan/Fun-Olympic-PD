@@ -3,5 +3,6 @@ import liveOne from "./liveOne.avif";
 import liveTwo from "./liveTwo.avif";
 import liveThree from "./liveThree.avif";
 import liveFour from "./liveFour.avif";
+import fun from "./fun.jpeg";
 
-export { logo, liveOne, liveTwo, liveThree, liveFour };
+export { fun, logo, liveOne, liveTwo, liveThree, liveFour };
