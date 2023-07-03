@@ -79,16 +79,31 @@ function Profile() {
       enqueueSnackbar("Please Insert First. Thank you", {
         variant: "error",
       });
+    } else if (passwordData.currentPassword !== activeUser?.password) {
+      enqueueSnackbar("Current Password din't Match With Previous One", {
+        variant: "error",
+      });
+    } else if (passwordData.password !== passwordData.confirmPassword) {
+      enqueueSnackbar("New Password din't Match With Confirm Password", {
+        variant: "error",
+      });
     } else {
-      setActiveUser({ ...activeUser!, ...infoData });
+      const updatedPasswordData = passwordData;
+      delete updatedPasswordData.currentPassword;
+      setActiveUser({ ...activeUser!, ...updatedPasswordData });
       enqueueSnackbar("information has been uploaded successfully", {
         variant: "success",
       });
       setIsInfoChanged(false);
+      setPasswordData(passwordState);
     }
   };
 
-  console.log("active user : ", activeUser);
+  console.log(
+    "active user : ",
+    passwordData.password,
+    passwordData.confirmPassword
+  );
   return (
     <div className="profile__wrapper">
       <div className="container">
@@ -156,7 +171,7 @@ function Profile() {
                 <label htmlFor="">Current Password : </label> <br />
                 <input
                   type="text"
-                  placeholder="Full Name ..."
+                  placeholder="Current Password ..."
                   name="currentPassword"
                   value={passwordData?.currentPassword}
                   onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
@@ -169,7 +184,7 @@ function Profile() {
                 <br />
                 <input
                   type="text"
-                  placeholder="Age ..."
+                  placeholder="New Password ..."
                   name="password"
                   value={passwordData?.password}
                   onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
@@ -182,7 +197,7 @@ function Profile() {
                 <br />
                 <input
                   type="text"
-                  placeholder="Age ..."
+                  placeholder="Confirm Password ..."
                   name="confirmPassword"
                   value={passwordData?.confirmPassword}
                   onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
