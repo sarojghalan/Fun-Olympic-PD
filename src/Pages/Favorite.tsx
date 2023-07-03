@@ -16,8 +16,9 @@ function Favorite() {
   ) => {
     e.preventDefault();
     setFavorite(favorite?.filter((item) => item.title !== title));
-    enqueueSnackbar("Removed from favorite.", { variant: "error" });
+    enqueueSnackbar("Removed from favorite.", { variant: "success" });
   };
+  console.log("favorite : ", favorite);
   return (
     <div className="container">
       <Title title="FAVORITE" />

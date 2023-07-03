@@ -9,6 +9,7 @@
     flex: 1;
     text-align: center;
     border-radius: $md-spacing;
+    margin-bottom: $md-spacing;
     p {
       font-size: $md-font;
       text-decoration: wavy;
@@ -16,7 +17,7 @@
     }
     .watch__live__video__wrapper {
       height: 80vh;
-      margin-bottom: $lg-spacing;
+      margin-bottom: $sm-spacing;
     }
   }
 }

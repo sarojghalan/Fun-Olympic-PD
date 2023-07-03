@@ -1,0 +1,41 @@
+@import "../abstract/_abstracts";
+.profile__wrapper {
+    height: 75vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  .profile__content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    .profile__section {
+      .account__information {
+        text-align: center;
+        .form__input {
+          margin-bottom: $md-spacing;
+          label {
+            font-weight: bold;
+            margin-bottom: $sm-spacing;
+          }
+          input {
+            width: 400px;
+            padding: 4px 16px;
+            &:focus {
+              outline: none;
+            }
+          }
+        }
+      }
+    }
+    .profile__img__section{
+        border-radius: 50%;
+        img{
+            height: 250px;
+            width: 250px;
+            object-fit: contain;
+            // border-radius: 50%;
+        }
+    }
+  }
+}

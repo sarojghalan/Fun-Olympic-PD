@@ -1,18 +1,41 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import Title from "../Components/Title/Title";
 import { videoUrls } from "../data/videoUrl";
 import ReactVideoPlayer from "../Utils/ReactVideoPlayer";
 import { useLocation } from "react-router-dom";
+import { fun } from "../assets";
+import { FavoriteContext } from "../context/FavoriteContext";
+import { useSnackbar } from "notistack";
 
 function WatchLive() {
   const dataNavigator = useLocation();
   const [commentData, setCommentData] = useState<string>("");
   const [commentArray, setCommentArray] = useState<string[]>([]);
-  console.log(commentArray);
+  const { favorite, setFavorite } = useContext(FavoriteContext);
+  const { enqueueSnackbar } = useSnackbar();
+
   const commentHandler = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     setCommentArray([...commentArray, commentData]);
     setCommentData("");
+  };
+
+  const favoriteHandler = (
+    e: React.MouseEvent<HTMLButtonElement>,
+    url: string,
+    title: string
+  ) => {
+    e.preventDefault();
+    e.preventDefault();
+    if (favorite?.find((item) => item.title === title)) {
+      enqueueSnackbar("Already In favorite.", { variant: "error" });
+    } else if (favorite === null) {
+      setFavorite([{ url: url, title: title }]);
+      enqueueSnackbar("Added to the favorite.", { variant: "success" });
+    } else {
+      setFavorite([...favorite!, { url: url, title: title }]);
+      enqueueSnackbar("Added to the favorite.", { variant: "success" });
+    }
   };
   return (
     <div className="watch__live__wrapper">
@@ -23,13 +46,31 @@ function WatchLive() {
             <div className="watch__live__content">
               <div className="watch__live__video__wrapper">
                 <ReactVideoPlayer
-                  playing={videoUrls[dataNavigator?.state?.key]?.playing}
-                  controls={videoUrls[dataNavigator?.state?.key]?.controls}
-                  muted={videoUrls[dataNavigator?.state?.key]?.muted}
+                  playing={true}
+                  controls={false}
+                  muted={true}
                   height="80vh"
                   width="100%"
-                  url={videoUrls[dataNavigator?.state?.key]?.url}
+                  url={dataNavigator?.state?.url}
                 />
+              </div>
+              <div className="content__description">
+                <div className="content__desc__img">
+                  <img src={fun} alt="" />
+                </div>
+                <p>FUN OLYMPICS | {dataNavigator?.state?.title} </p>
+                <button
+                  className="content__desc__btn"
+                  onClick={(e: React.MouseEvent<HTMLButtonElement>) =>
+                    favoriteHandler(
+                      e,
+                      dataNavigator?.state?.url,
+                      dataNavigator?.state?.title
+                    )
+                  }
+                >
+                  Add to Favorite
+                </button>
               </div>
             </div>
           </div>

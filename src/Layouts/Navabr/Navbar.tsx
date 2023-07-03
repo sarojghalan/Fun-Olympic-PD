@@ -28,6 +28,11 @@ function Navbar() {
     enqueueSnackbar("Successfully Logout.", { variant: "success" });
   };
 
+  const profileHandler = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    navigate("/profile");
+  };
+
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <div className="container">
@@ -80,15 +85,26 @@ function Navbar() {
           </ul>
           <div className="nav__right__section">
             {activeUser ? (
-              <div>
-                <SampleButton
-                  title="Log Out"
-                  nameOfClass=""
-                  handler={(e: React.MouseEvent<HTMLButtonElement>) =>
-                    logoutHandler(e)
-                  }
-                />
-              </div>
+              <>
+                <div>
+                  <SampleButton
+                    title="Log Out"
+                    nameOfClass=""
+                    handler={(e: React.MouseEvent<HTMLButtonElement>) =>
+                      logoutHandler(e)
+                    }
+                  />
+                </div>
+                <div>
+                  <SampleButton
+                    title="Edit Profile"
+                    nameOfClass=""
+                    handler={(e: React.MouseEvent<HTMLButtonElement>) =>
+                      profileHandler(e)
+                    }
+                  />
+                </div>
+              </>
             ) : (
               <>
                 {" "}
