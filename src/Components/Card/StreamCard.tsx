@@ -19,7 +19,7 @@ function StreamCard({
   return (
     <div className="stream__card__wrapper">
       <div className="stream__card__img">
-        <img src={image} alt="Pikachu Streamer" />
+        <img src={image} alt={cardTitle} />
       </div>
       <div className="stream__card__content">
         <div className="stream__card__title">

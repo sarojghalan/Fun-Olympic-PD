@@ -1,0 +1,47 @@
+@import "../../abstract/_abstracts";
+.favorite__card__wrapper {
+  margin: 0px 16px;
+  width: 330px;
+  padding: $md-spacing;
+  border-radius: $md-spacing;
+  background-color: $secondary-color;
+  .favorite__card__img {
+    text-align: center;
+    img {
+      height: 250px;
+      width: 100%;
+      border-radius: $md-spacing;
+      object-fit: cover;
+    }
+  }
+  .favorite__card__content {
+    .favorite__card__title {
+      color: $primary-color;
+      display: flex;
+      padding: 0px 10px;
+      margin: $md-spacing 0px;
+      justify-content: space-between;
+        p {
+          font-weight: $bold;
+          color: $black-color;
+        }
+        .icon{
+            color: $primary-color;
+            &:hover{
+                color: $black-color;
+            }
+        }
+    }
+    .favorite__card__description {
+      margin: $md-spacing 0px;
+      text-align: justify;
+      line-height: 1.2;
+    }
+  }
+  .favorite__card__btn {
+    text-align: center;
+    .favorite__btn {
+      width: 100%;
+    }
+  }
+}
