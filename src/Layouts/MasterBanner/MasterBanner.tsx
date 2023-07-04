@@ -6,7 +6,7 @@ import "../../Scss/Main.scss";
 import { ActiveUserContext } from "../../context/ActiveUser";
 import { useNavigate } from "react-router-dom";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
-import { fun } from "../../assets";
+import { fun, master } from "../../assets";
 import { FavoriteContext } from "../../context/FavoriteContext";
 import { useSnackbar } from "notistack";
 
@@ -33,7 +33,6 @@ function MasterBanner() {
   };
   return (
     <div className="master__banner__wrapper">
-      <div className="container">
         <div className="row">
           <div className="col-12 col-lg-12 col-md-12 col-sm-12 ">
             <div className="master__banner__left__section">
@@ -43,7 +42,7 @@ function MasterBanner() {
                     playing={videoUrls[3]?.playing}
                     controls={videoUrls[3]?.controls}
                     muted={videoUrls[3]?.muted}
-                    height="85vh"
+                    height="92.1vh"
                     width="100%"
                     url={videoUrls[3]?.url}
                   />
@@ -66,11 +65,11 @@ function MasterBanner() {
                 <>
                   <div className="master__banner__img__wrapper">
                     <img
-                      src={videoUrls[0].img}
+                      src={master}
                       style={{
-                        height: `${videoUrls[0].height}`,
-                        width: `${videoUrls[0]?.width}`,
-                        zIndex: "0",
+                        height: '92.1vh',
+                        width: '100%',
+                        objectFit:'cover'
                       }}
                     />
                     <button
@@ -84,7 +83,7 @@ function MasterBanner() {
                   </div>
                   <div className="content__description">
                     <div className="content__desc__img">
-                      <img src={fun} alt="" />
+                      <img src={master} alt="" />
                     </div>
                     <p>FUN OLYMPICS | RALLY </p>
                     <button className="content__desc__btn">
@@ -96,7 +95,6 @@ function MasterBanner() {
             </div>
           </div>
         </div>
-      </div>
     </div>
   );
 }

@@ -1,6 +1,7 @@
 @import "../abstract/variables";
 .master__banner__wrapper {
-  margin: $lg-spacing $xs-spacing;
+  // margin: 0px $xs-spacing;
+  overflow: hidden;
   .master__banner__left__section {
     margin-bottom: $lg-spacing;
   }
@@ -14,10 +15,11 @@
   .master__banner__img__wrapper {
     text-align: center;
     position: relative;
+    overflow: hidden;
     .master__banner__btn {
       position: absolute;
       top: 90%;
-      left: 44%;
+      left: 48%;
       border: $none;
       background-color: $primary-color;
       color: $white-color;
