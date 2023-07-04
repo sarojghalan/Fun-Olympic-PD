@@ -4,6 +4,7 @@ import AdminCategory from "../layouts/Category/Category";
 import GraphBar from "../layouts/Graph/GraphBar";
 import Analytics from "../layouts/Analytics/Analytics";
 import AdminLive from "../layouts/AdminLive/Live";
+import AdminPopular from "../layouts/AdminPopular/Popular";
 
 function AdminRouting() {
   return (
@@ -13,6 +14,7 @@ function AdminRouting() {
       <Route path="/graph" element={<GraphBar />} />
       <Route path="/analytics" element={<Analytics />} />
       <Route path="/live" element={<AdminLive />} />
+      <Route path="/popular-stream" element={<AdminPopular />} />
     </Routes>
   );
 }

@@ -10,6 +10,7 @@ import AdminProvider from "./context/AdminContext.tsx";
 import AdminCategoryProvider from "./context/AdminCategory.tsx";
 import FavoriteProvider from "./context/FavoriteContext.tsx";
 import AdminLiveProvider from "./context/AdminLive.tsx";
+import AdminPopularProvider from "./context/AdminPopular.tsx";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
@@ -17,15 +18,17 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
       <AdminProvider>
         <AdminCategoryProvider>
           <UserProvider>
-            <AdminLiveProvider>
-              <ActiveUserProvider>
-                <FavoriteProvider>
-                  <SnackbarProvider>
-                    <App />
-                  </SnackbarProvider>
-                </FavoriteProvider>
-              </ActiveUserProvider>
-            </AdminLiveProvider>
+            <AdminPopularProvider>
+              <AdminLiveProvider>
+                <ActiveUserProvider>
+                  <FavoriteProvider>
+                    <SnackbarProvider>
+                      <App />
+                    </SnackbarProvider>
+                  </FavoriteProvider>
+                </ActiveUserProvider>
+              </AdminLiveProvider>
+            </AdminPopularProvider>
           </UserProvider>
         </AdminCategoryProvider>
       </AdminProvider>

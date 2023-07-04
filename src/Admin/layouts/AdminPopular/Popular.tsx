@@ -3,61 +3,65 @@ import { Container } from "@mui/material";
 import CustomizedTables from "../../../Utils/TableData";
 import BasicModal from "../../components/modal/Modal";
 import "../../styles/Style.scss";
-import { AdminLiveContext } from "../../../context/AdminLive";
+import { AdminPopularContext } from "../../../context/AdminPopular";
 import { useSnackbar } from "notistack";
 
-interface adminLiveI {
+interface adminPopularI {
   title: string;
   url: string;
+  description: string;
 }
 
-const initialState: adminLiveI = {
+const initialState: adminPopularI = {
   title: "",
   url: "",
+  description: "",
 };
-function AdminLive() {
+function AdminPopular() {
   const { enqueueSnackbar } = useSnackbar();
-  const { adminLive, setAdminLive } = useContext(AdminLiveContext);
+  const { adminPopular, setAdminPopular } = useContext(AdminPopularContext);
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const [isEditMode, setIsEditMode] = useState<boolean>(false);
   const [objFindingElem, setObjFindingElem] = useState<string>("");
   const [isDataReloader, setIsDataReloader] = useState<boolean>(false);
 
-  const [liveData, setLiveData] = useState<adminLiveI | undefined>(
+  const [popularData, setPopularData] = useState<adminPopularI | undefined>(
     initialState
   );
 
   useEffect(() => {
     if (isDataReloader) {
-      setAdminLive([...adminLive!, liveData!]);
+      setAdminPopular([...adminPopular!, popularData!]);
       enqueueSnackbar("Category Updated Successfully", { variant: "success" });
     }
   }, [isDataReloader]);
 
   const categoryHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
-    setLiveData({ ...liveData!, [e.target.name]: e.target.value });
+    setPopularData({ ...popularData!, [e.target.name]: e.target.value });
   };
 
   const addHandler = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     if (isEditMode) {
       console.log("edit mode true");
-      setAdminLive(adminLive?.filter((item) => item.title !== objFindingElem));
+      setAdminPopular(
+        adminPopular?.filter((item) => item.title !== objFindingElem)
+      );
       setIsDataReloader(!isDataReloader);
       setIsModalOpen(!isModalOpen);
       setIsEditMode(false);
     } else {
-      if (adminLive === null) {
-        setAdminLive([{ ...liveData! }]);
-        setLiveData(initialState);
+      if (adminPopular === null) {
+        setAdminPopular([{ ...popularData! }]);
+        setPopularData(initialState);
         setIsModalOpen(!isModalOpen);
         enqueueSnackbar("Live video added successfully. ", {
           variant: "success",
         });
       } else {
-        setAdminLive([...adminLive!, liveData!]);
-        setLiveData(initialState);
+        setAdminPopular([...adminPopular!, popularData!]);
+        setPopularData(initialState);
         setIsModalOpen(!isModalOpen);
         enqueueSnackbar("Live video added successfully. ", {
           variant: "success",
@@ -66,7 +70,7 @@ function AdminLive() {
     }
   };
 
-  console.log("liveData : ", liveData);
+  console.log("popularData : ", popularData);
 
   return (
     <>
@@ -75,8 +79,8 @@ function AdminLive() {
         <BasicModal
           isModalOpen={isModalOpen}
           setIsModalOpen={setIsModalOpen}
-          data={liveData}
-          setData={setLiveData}
+          data={popularData}
+          setData={setPopularData}
         >
           <form className="admin__add__form" action="">
             <p>Add Live Stream</p>
@@ -87,7 +91,7 @@ function AdminLive() {
                 type="text"
                 placeholder="enter title ..."
                 name="title"
-                value={liveData?.title}
+                value={popularData?.title}
                 onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
                   categoryHandler(e)
                 }
@@ -100,7 +104,7 @@ function AdminLive() {
                 type="text"
                 placeholder="enter url ..."
                 name="url"
-                value={liveData?.url}
+                value={popularData?.url}
                 onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
                   categoryHandler(e)
                 }
@@ -119,9 +123,9 @@ function AdminLive() {
         </BasicModal>
         <Container>
           <CustomizedTables
-            arr={adminLive}
-            setArr={setAdminLive}
-            itemData={setLiveData}
+            arr={adminPopular}
+            setArr={setAdminPopular}
+            itemData={setPopularData}
             editMode={isEditMode}
             setEditMode={setIsEditMode}
             objFindingElem={objFindingElem}
@@ -133,4 +137,4 @@ function AdminLive() {
   );
 }
 
-export default AdminLive;
+export default AdminPopular;

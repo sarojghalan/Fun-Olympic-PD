@@ -5,6 +5,7 @@ import CategoryIcon from "@mui/icons-material/Category";
 import AnalyticsIcon from "@mui/icons-material/Analytics";
 import LiveTvIcon from "@mui/icons-material/LiveTv";
 import BarChartIcon from "@mui/icons-material/BarChart";
+import StreamIcon from '@mui/icons-material/Stream';
 import { NavLink } from "react-router-dom";
 import { logo } from "../../../assets";
 
@@ -41,6 +42,14 @@ function SideBar() {
             </span>
             <p>
               <NavLink to="/live">Live</NavLink>
+            </p>
+          </div>
+          <div className="sidebar__list__content">
+            <span>
+              <StreamIcon />
+            </span>
+            <p>
+              <NavLink to="/popular">Popular</NavLink>
             </p>
           </div>
           <div className="sidebar__list__content">

@@ -8,6 +8,11 @@ interface dataI {
   iconClass: string;
   url: string;
 }
+interface adminPopularI {
+  title: string;
+  url: string;
+  description: string;
+}
 interface adminLiveI {
   title: string;
   url: string;
@@ -16,8 +21,10 @@ interface ModalI {
   children: React.ReactNode;
   isModalOpen: boolean;
   setIsModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
-  data: dataI | undefined | adminLiveI;
-  setData: React.Dispatch<React.SetStateAction<dataI | undefined | adminLiveI>>;
+  data: dataI | undefined | adminLiveI | adminPopularI;
+  setData: React.Dispatch<
+    React.SetStateAction<dataI | undefined | adminLiveI | adminPopularI>
+  >;
 }
 
 const style = {
