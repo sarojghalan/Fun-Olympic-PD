@@ -6,7 +6,7 @@ import { RegisterI } from "../../Interface/Auth/RegisterInterface";
 import "../../Scss/Main.scss";
 import { UserContext } from "../../context/UserContext";
 import { useSnackbar } from "notistack";
-import { useNavigate } from "react-router-dom";
+import { useNavigate , NavLink} from "react-router-dom";
 
 function Register() {
   const { isLoading, setIsLoading, user, setUser } = useContext(UserContext);
@@ -141,7 +141,7 @@ function Register() {
                 <label htmlFor="">Password : </label>
                 <br />
                 <SampleInput
-                  type="text"
+                  type="password"
                   placeHolder="Enter Password Here .."
                   name="password"
                   value={registerCredentials.password}
@@ -154,7 +154,7 @@ function Register() {
                 <label htmlFor="">Confirm Password : </label>
                 <br />
                 <SampleInput
-                  type="text"
+                  type="password"
                   placeHolder="Enter Confirm Password Here .."
                   name="confirmPassword"
                   value={registerCredentials.confirmPassword}
@@ -174,6 +174,11 @@ function Register() {
               </div>
             </form>
           </div>
+          <div className="admin__login">
+              <NavLink to='/admin'>
+              <p>Back to Login ?</p>
+              </NavLink>
+            </div>
         </div>
       </div>
     </div>

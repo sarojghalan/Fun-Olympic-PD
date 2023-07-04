@@ -36,33 +36,6 @@ function MasterBanner() {
         <div className="row">
           <div className="col-12 col-lg-12 col-md-12 col-sm-12 ">
             <div className="master__banner__left__section">
-              {activeUser ? (
-                <>
-                  <ReactVideoPlayer
-                    playing={videoUrls[3]?.playing}
-                    controls={videoUrls[3]?.controls}
-                    muted={videoUrls[3]?.muted}
-                    height="92.1vh"
-                    width="100%"
-                    url={videoUrls[3]?.url}
-                  />
-                  <div className="content__description">
-                    <div className="content__desc__img">
-                      <img src={fun} alt="" />
-                    </div>
-                    <p>FUN OLYMPICS | RALLY </p>
-                    <button
-                      className="content__desc__btn"
-                      onClick={(e: React.MouseEvent<HTMLButtonElement>) =>
-                        favoriteHandler(e)
-                      }
-                    >
-                      Add to Favorite
-                    </button>
-                  </div>
-                </>
-              ) : (
-                <>
                   <div className="master__banner__img__wrapper">
                     <img
                       src={master}
@@ -81,7 +54,7 @@ function MasterBanner() {
                       Watch
                     </button>
                   </div>
-                  <div className="content__description">
+                  {/* <div className="content__description">
                     <div className="content__desc__img">
                       <img src={master} alt="" />
                     </div>
@@ -89,9 +62,7 @@ function MasterBanner() {
                     <button className="content__desc__btn">
                       Add to Favorite
                     </button>
-                  </div>
-                </>
-              )}
+                  </div> */}
             </div>
           </div>
         </div>

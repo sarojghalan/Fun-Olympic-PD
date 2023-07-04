@@ -8,4 +8,7 @@
   border-radius: $s-spacing;
   color: $black-color;
   letter-spacing: 1px;
+  &:focus{
+    outline: none;
+  }
 }

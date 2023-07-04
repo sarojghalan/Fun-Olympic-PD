@@ -1,50 +1,75 @@
 @import "../abstract/_abstracts";
-.login__wrapper{
-    display: flex;
-    height: 80vh;
-    justify-content: center;
-    align-items: center;
-    .login__left__section{
-        flex: 1;
+.login__wrapper {
+  display: flex;
+  height: 80vh;
+  justify-content: center;
+  align-items: center;
+  .login__left__section {
+    flex: 1;
 
-        img{
-            height: 40vh;
-            width: 100%;
-            object-fit: contain;
-        }
+    img {
+      height: 40vh;
+      width: 100%;
+      object-fit: contain;
     }
-    .login__right__section{
-        flex: 1;
-        text-align: center;
-        h3{
-            color: $primary-color;
-            margin-bottom:$md-spacing ;
-        }
-        .login__form__section{
-            background-color: $secondary-color;
-            margin: 0px $lg-spacing;
-            padding: $lg-spacing;
-            align-items: start;
-            border-radius: $md-spacing;
-            .login__input__bar{
-                label{
-                    margin-bottom: $md-spacing;
-                }
-                input{
-                    margin-bottom: $lg-spacing;
-                    width: 80%;
-                }
-            }
-            .login__btn{
-                button{
-                    width: 80%;
-                }
-            }
-        }
-        .admin__Login{
-            p{
-                
-            }
-        }
+  }
+  .login__right__section {
+    flex: 1;
+    text-align: center;
+    h3 {
+      color: $black-color;
+      margin-bottom: $md-spacing;
+      font-weight: bold ;
     }
+    .login__form__section {
+      background-color: $secondary-color;
+      margin: 0px $lg-spacing;
+      padding: $lg-spacing;
+      align-items: start;
+      border-radius: $md-spacing;
+      .login__input__bar {
+        position: relative;
+        label {
+          margin-bottom: $md-spacing;
+          font-weight: bold;
+        }
+        input {
+          margin-bottom: $lg-spacing;
+          width: 80%;
+          &:focus{
+            outline: none;
+          }
+        }
+        span{
+          position: absolute;
+          left: 85%;
+          top: 43%;
+        }
+      }
+      .login__btn {
+        button {
+          width: 80%;
+        }
+      }
+    }
+    .admin__login {
+      margin-top: $md-spacing;
+
+      p {
+        color: $admin-color;
+        font-weight: bold;
+        text-decoration: underline;
+        display: inline;
+        transition:0.3s ease-in-out;
+
+        &:hover {
+          background-color: $admin-color;
+          color: $white-color;
+          padding: 10px 10px;
+          border-radius: 8px;
+          text-decoration: $none;
+        }
+      }
+    }
+  }
 }

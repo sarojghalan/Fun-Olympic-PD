@@ -1,7 +1,7 @@
 @import "../abstract/_abstracts";
 .register__wrapper{
     display: flex;
-    height: 92vh;
+    height: 100vh;
     justify-content: center;
     align-items: center;
     .register__left__section{
@@ -32,6 +32,9 @@
                 input{
                     margin-bottom: $lg-spacing;
                     width: 80%;
+                    &:focus{
+                        outline: none;
+                    }
                 }
             }
             .register__btn{
@@ -42,3 +45,21 @@
         }
     }
 }
+.admin__login {
+    margin-top: $md-spacing;
+    p {
+      color: $admin-color;
+      font-weight: bold;
+      text-decoration: underline;
+      display: inline;
+      transition:0.3s ease-in-out;
+
+      &:hover {
+        background-color: $admin-color;
+        color: $white-color;
+        padding: 10px 10px;
+        border-radius: 8px;
+        text-decoration: $none;
+      }
+    }
+  }

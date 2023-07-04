@@ -19,6 +19,7 @@ function Login() {
   const { activeUser, setActiveUser } = useContext(ActiveUserContext);
   const navigate = useNavigate();
   const [loginCredentials, setLoginCredentials] = useState<loginI>(credentials);
+  const [togglePassword, setTogglePassword] = useState<boolean>(false);
 
   const inputHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
@@ -63,6 +64,11 @@ function Login() {
       });
     }
   };
+
+  const toggleHandler = (e: React.MouseEvent<HTMLSpanElement>) => {
+    e.preventDefault();
+    setTogglePassword(!togglePassword);
+  };
   return (
     <div className="container">
       <div className="login__wrapper">
@@ -90,7 +96,7 @@ function Login() {
                 <label htmlFor="">Password : </label>
                 <br />
                 <SampleInput
-                  type="text"
+                  type={togglePassword ? "text" : "password"}
                   placeHolder="Enter Your Password Here .."
                   name="password"
                   value={loginCredentials.password}
@@ -98,6 +104,23 @@ function Login() {
                     inputHandler(e)
                   }
                 />
+                {togglePassword ? (
+                  <span
+                    onClick={(e: React.MouseEvent<HTMLSpanElement>) =>
+                      toggleHandler(e)
+                    }
+                  >
+                    <i className="fa-solid fa-eye-slash"></i>
+                  </span>
+                ) : (
+                  <span
+                    onClick={(e: React.MouseEvent<HTMLSpanElement>) =>
+                      toggleHandler(e)
+                    }
+                  >
+                    <i className="fa-solid fa-eye"></i>
+                  </span>
+                )}
               </div>
               <div className="login__btn">
                 <SampleButton
@@ -110,11 +133,11 @@ function Login() {
               </div>
             </form>
           </div>
-            <div className="admin__login">
-              <NavLink to='/admin'>
-              <p>Login as ADMIN</p>
-              </NavLink>
-            </div>
+          <div className="admin__login">
+            <NavLink to="/admin">
+              <p>Login as ADMIN ?</p>
+            </NavLink>
+          </div>
         </div>
       </div>
     </div>

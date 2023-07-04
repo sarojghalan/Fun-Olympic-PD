@@ -6,7 +6,7 @@ import "../../Scss/Main.scss";
 import { loginI } from "../../Interface/Auth/LoginInterface";
 import { UserContext } from "../../context/UserContext";
 import { useSnackbar } from "notistack";
-import { useNavigate } from "react-router-dom";
+import { useNavigate , NavLink} from "react-router-dom";
 import { AdminContext } from "../../context/AdminContext";
 
 function AdminLogin() {
@@ -73,7 +73,7 @@ function AdminLogin() {
                 <label htmlFor="">Password : </label>
                 <br />
                 <SampleInput
-                  type="text"
+                  type="password"
                   placeHolder="Enter Your Password Here .."
                   name="password"
                   value={loginCredentials.password}
@@ -93,6 +93,11 @@ function AdminLogin() {
               </div>
             </form>
           </div>
+          <div className="admin__login">
+              <NavLink to='/admin'>
+              <p>Login as ADMIN ?</p>
+              </NavLink>
+            </div>
         </div>
       </div>
     </div>

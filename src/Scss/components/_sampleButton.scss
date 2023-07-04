@@ -1,7 +1,7 @@
-@import "../abstract/variables";
+ @import "../abstract/variables";
 .base__sample__button {
   border: none;
-  padding: $s-spacing $md-spacing;
+  padding: $s-spacing $md-spacing !important;
   border: $none;
   cursor: pointer;
   text-transform: capitalize;
@@ -9,6 +9,7 @@
   border-radius: $s-spacing;
   color: $white-color;
   letter-spacing: 1px;
+  font-weight: bold;
   &:hover {
     background-color: $black-color;
   }

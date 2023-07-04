@@ -18,34 +18,53 @@
     overflow: hidden;
     .master__banner__btn {
       position: absolute;
+        animation: iconAnimation 1s infinite;
       top: 90%;
       left: 48%;
       border: $none;
       background-color: $primary-color;
       color: $white-color;
       font-size: $sm-font;
-      border-radius: $md-spacing;
-      padding: $sm-spacing $lg-spacing;
+      border-radius: 8px;
+      padding: 8px $lg-spacing;
       border: 1px solid $white-color;
-    }
-    button {
-      position: absolute;
-      top: 60%;
-      left: 42%;
-      border: $none;
-      background-color: $primary-color;
-      color: $white-color;
-      font-size: $sm-font;
-      border-radius: $md-spacing;
-      padding: $sm-spacing $md-spacing;
-      border: 1px solid $white-color;
-      letter-spacing: 1px;
-      &:hover {
+      font-weight: bold;
+            &:hover {
         background-color: $black-color;
       }
     }
+    // button {
+    //   position: absolute;
+    //   top: 60%;
+    //   left: 42%;
+    //   border: $none;
+    //   background-color: $primary-color;
+    //   color: $white-color;
+    //   font-size: $sm-font;
+    //   border-radius: $md-spacing;
+    //   padding: $sm-spacing $md-spacing;
+    //   border: 1px solid $white-color;
+    //   letter-spacing: 1px;
+    //   &:hover {
+    //     background-color: $black-color;
+    //   }
+    // }
   }
 }
+
+@keyframes iconAnimation {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+
 .content__description {
   padding-top: $md-spacing;
   display: flex;

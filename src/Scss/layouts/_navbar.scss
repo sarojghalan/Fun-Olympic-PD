@@ -7,6 +7,7 @@
   background-color: $white-color !important;
   z-index: 9999;
   box-shadow: 0px 8px 10px -5px rgba(0, 0, 0, 0.1);
+  padding: 16px 0px;
   .navbar-brand {
     img {
       height: 20px;
@@ -40,4 +41,7 @@
   color: white;
   background-color: $primary-color;
   border-radius: 50%;
+}
+.nav-link{
+  outline: $none;
 }
