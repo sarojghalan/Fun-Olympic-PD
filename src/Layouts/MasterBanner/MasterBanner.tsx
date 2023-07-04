@@ -33,28 +33,28 @@ function MasterBanner() {
   };
   return (
     <div className="master__banner__wrapper">
-        <div className="row">
-          <div className="col-12 col-lg-12 col-md-12 col-sm-12 ">
-            <div className="master__banner__left__section">
-                  <div className="master__banner__img__wrapper">
-                    <img
-                      src={master}
-                      style={{
-                        height: '92.1vh',
-                        width: '100%',
-                        objectFit:'cover'
-                      }}
-                    />
-                    <button
-                      className="master__banner__btn"
-                      onClick={(e: React.MouseEvent<HTMLButtonElement>) =>
-                        navigate("/login")
-                      }
-                    >
-                      Watch
-                    </button>
-                  </div>
-                  {/* <div className="content__description">
+      <div className="row">
+        <div className="col-12 col-lg-12 col-md-12 col-sm-12 ">
+          <div className="master__banner__left__section">
+            <div className="master__banner__img__wrapper">
+              <img
+                src={master}
+                style={{
+                  height: "92.1vh",
+                  width: "100%",
+                  objectFit: "cover",
+                }}
+              />
+              <button
+                className="master__banner__btn"
+                onClick={(e: React.MouseEvent<HTMLButtonElement>) => {
+                  activeUser ? navigate("/live") : navigate("/login");
+                }}
+              >
+                Watch
+              </button>
+            </div>
+            {/* <div className="content__description">
                     <div className="content__desc__img">
                       <img src={master} alt="" />
                     </div>
@@ -63,9 +63,9 @@ function MasterBanner() {
                       Add to Favorite
                     </button>
                   </div> */}
-            </div>
           </div>
         </div>
+      </div>
     </div>
   );
 }

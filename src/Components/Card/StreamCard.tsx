@@ -1,5 +1,4 @@
 import { StreamCardInterface } from "../../Interface/StreamCardInterface";
-import WatchLive from "../../Pages/watchLive";
 import SampleButton from "../Button/SampleButton";
 import { useNavigate } from "react-router-dom";
 

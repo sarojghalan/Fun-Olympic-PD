@@ -2,3 +2,6 @@
 @import "./layouts/_layouts-dir";
 @import "./pages/_pages-dir";
 @import "../Admin/styles/Style.scss";
+.overall__wrapper{
+    margin-top: $lg-spacing;
+}

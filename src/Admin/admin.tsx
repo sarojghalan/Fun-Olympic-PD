@@ -18,7 +18,7 @@ function Admin() {
   };
   return (
     <>
-      <div className="d-flex">
+      <div className="d-flex"> 
         <SideBar />
         <div className="routing__wrapper">
           <div className="admin__title__wrapper">

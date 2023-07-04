@@ -10,24 +10,26 @@ function Favorite() {
 
   console.log("favorite : ", favorite);
   return (
-    <div className="favorite__container">
-      <div className="container">
-        <Title title="FAVORITE" />
-        <div className="live__wrapper">
-          {favorite === undefined ||
-          favorite === null ||
-          favorite.length <= 0 ? (
-            <p>Nothing on Favorites</p>
-          ) : (
-            favorite?.map((item, keys) => (
-              <FavoriteCard
-                title={item?.title}
-                url={item?.url}
-                favorite={favorite}
-                setFavorite={setFavorite}
-              />
-            ))
-          )}
+    <div className="overall__wrapper">
+      <div className="favorite__container">
+        <div className="container">
+          <Title title="FAVORITE" />
+          <div className="live__wrapper">
+            {favorite === undefined ||
+            favorite === null ||
+            favorite.length <= 0 ? (
+              <p>Nothing on Favorites</p>
+            ) : (
+              favorite?.map((item, keys) => (
+                <FavoriteCard
+                  title={item?.title}
+                  url={item?.url}
+                  favorite={favorite}
+                  setFavorite={setFavorite}
+                />
+              ))
+            )}
+          </div>
         </div>
       </div>
     </div>

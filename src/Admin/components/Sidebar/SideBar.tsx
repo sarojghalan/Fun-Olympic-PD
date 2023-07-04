@@ -4,8 +4,9 @@ import HomeIcon from "@mui/icons-material/Home";
 import CategoryIcon from "@mui/icons-material/Category";
 import AnalyticsIcon from "@mui/icons-material/Analytics";
 import LiveTvIcon from "@mui/icons-material/LiveTv";
-import BarChartIcon from '@mui/icons-material/BarChart';
+import BarChartIcon from "@mui/icons-material/BarChart";
 import { NavLink } from "react-router-dom";
+import { logo } from "../../../assets";
 
 function SideBar() {
   const pathName = window.location.pathname;
@@ -13,66 +14,49 @@ function SideBar() {
     <div className="sidebar__wrapper">
       <div className="sidebar__content">
         <div className="sidebar__title">
+          <img src={logo} alt="logo" />
           <h3>Fun Olympics</h3>
         </div>
         <div className="sidebar__list">
           <div className="sidebar__list__content">
-            {/* {pathName == "/" ? (
-              <p className="active">
-                <span>
-                  <HomeIcon />
-                </span>
-                Home
-              </p>
-            ) : ( */}
+            <span>
+              <HomeIcon />
+            </span>
             <p>
-              <NavLink to="/">
-                <span>
-                  <HomeIcon />
-                </span>
-                Home
-              </NavLink>
+              <NavLink to="/">Home</NavLink>
             </p>
             {/* )} */}
           </div>
           <div className="sidebar__list__content">
+            <span>
+              <CategoryIcon />
+            </span>
             <p>
-              <NavLink to="/category">
-                <span>
-                  <CategoryIcon />
-                </span>
-                Category
-              </NavLink>
+              <NavLink to="/category">Category</NavLink>
             </p>
           </div>
           <div className="sidebar__list__content">
+            <span>
+              <LiveTvIcon />
+            </span>
             <p>
-              <NavLink to="/live">
-                <span>
-                  <LiveTvIcon />
-                </span>
-                Live
-              </NavLink>
+              <NavLink to="/live">Live</NavLink>
             </p>
           </div>
           <div className="sidebar__list__content">
+            <span>
+              <AnalyticsIcon />
+            </span>
             <p>
-              <NavLink to="/analytics">
-                <span>
-                  <AnalyticsIcon />
-                </span>
-                Analytics
-              </NavLink>
+              <NavLink to="/analytics">Analytics</NavLink>
             </p>
           </div>
           <div className="sidebar__list__content">
+            <span>
+              <BarChartIcon />
+            </span>
             <p>
-              <NavLink to="/graph">
-                <span>
-                  <BarChartIcon />
-                </span>
-                Chart
-              </NavLink>
+              <NavLink to="/graph">Chart</NavLink>
             </p>
           </div>
         </div>

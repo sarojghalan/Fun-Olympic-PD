@@ -7,25 +7,41 @@
     .sidebar__title {
       text-align: center;
       font-size: 22px;
+      align-items: center;
+      justify-content: center;
+      display: flex;
       border-bottom: 1px solid $tertiary-color;
       padding: $md-spacing;
+      gap: 12px;
+      img {
+        height: 40px;
+        width: 40px;
+        object-fit: contain;
+        padding-top: 6px;
+      }
+      h3 {
+        font-size: $md-font;
+        font-weight: bold;
+      }
     }
     .sidebar__list {
       .sidebar__list__content {
         margin: $md-spacing $md-spacing;
-        .active{
-          color: $admin-color;
+        display: FLEX;
+        .active {
+          color: $primary-color !important;
           font-weight: bold;
-          span{
-            color: $admin-color;
+          span {
+            color: $primary-color;
           }
         }
         p {
           font-size: 20px;
-          span {
-            color: $primary-color;
-            margin-right: $md-spacing;
+          a {
+            color: $black-color !important;
+            padding-top: 12px !important;
           }
+
           &:hover {
             color: #1976d2;
             font-weight: bold;
@@ -33,6 +49,11 @@
           &:hover span {
             color: #1976d2;
           }
+        }
+        span {
+          color: $primary-color;
+          margin-right: $md-spacing;
+          margin-top:4px ;
         }
       }
     }

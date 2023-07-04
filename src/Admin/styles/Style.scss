@@ -3,7 +3,7 @@
 
 .routing__wrapper {
   .admin__title__wrapper {
-    background-color: $admin-color;
+    background-color: $primary-color;
     color: $white-color;
     width: 83.7vw !important;
     justify-content: space-between !important;
@@ -16,7 +16,12 @@
       background-color: $white-color;
       padding: 4px 12px;
       border: none;
-      color: $primary-color;
+      color: $black-color;
+      font-weight: bold;
+      &:hover{
+        background-color: black;
+        color: $white-color;
+      }
     }
   }
 }
