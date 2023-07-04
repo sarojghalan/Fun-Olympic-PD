@@ -10,7 +10,7 @@ function AdminHome() {
         <div className="admin__home__content">
           <AdminCard
             count={2}
-            title="User"
+            title="Total User"
             icon={<PersonIcon sx={{ fontSize: "16px" }} />}
           />
           <AdminCard

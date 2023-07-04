@@ -8,13 +8,13 @@
   flex-direction: column;
   justify-content: center;
   .admin__add {
-    background-color: $admin-color;
+    background-color: $primary-color;
     color: $white-color;
     padding: 4px $md-spacing;
     margin-bottom: $lg-spacing;
     border: $none;
     &:hover {
-      background-color: $primary-color;
+      background-color: $admin-color;
     }
   }
 }

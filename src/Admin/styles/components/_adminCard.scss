@@ -1,12 +1,13 @@
 @import "../../../Scss/abstract/_abstracts";
 
 .admin__card__wrapper {
-  background-color: $white-color;
+  background-color: $primary-color;
   width: 200px;
   height: 200px;
   display: flex;
   flex-direction: column;
   text-align: center;
+  border-radius: $md-spacing;
   justify-content: center;
   .admin__card__content {
     display: flex;
@@ -14,15 +15,17 @@
     justify-content: center;
     gap: 4px;
     .card__icon {
+      color: $white-color;
+      font-weight: bold;
     }
     .card__title {
       font-size: $md-spacing;
-    //   margin-top: 2px;
+      color: $white-color;
+      //   margin-top: 2px;
     }
   }
   h3 {
-    color: $admin-color;
+    color: $white-color;
     padding: 4px;
-
   }
 }

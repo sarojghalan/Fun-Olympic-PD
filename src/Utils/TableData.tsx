@@ -29,7 +29,7 @@ interface TableArrI {
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
-    backgroundColor: "#1976d2",
+    backgroundColor: "#00e0c6",
     color: theme.palette.common.white,
   },
   [`&.${tableCellClasses.body}`]: {
@@ -105,6 +105,7 @@ export default function CustomizedTables({
                       border: "none",
                       background: "transparent",
                       marginLeft: "10px",
+                      color: "#00e0c6",
                     }}
                     onClick={(e: React.MouseEvent<HTMLButtonElement>) =>
                       editHandler(e, row?.title)
@@ -117,6 +118,7 @@ export default function CustomizedTables({
                       border: "none",
                       background: "transparent",
                       marginLeft: "10px",
+                      color: "#00e0c6",
                     }}
                     onClick={(e: React.MouseEvent<HTMLButtonElement>) =>
                       deleteHandler(e, row?.title)
