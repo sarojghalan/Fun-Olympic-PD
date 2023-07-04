@@ -16,11 +16,19 @@ interface TableI {
   url: string;
   iconClass: string;
 }
+interface adminLiveI {
+  title: string;
+  url: string;
+}
 
 interface TableArrI {
-  arr: TableI[] | null | undefined;
-  setArr: React.Dispatch<React.SetStateAction<TableI[] | null | undefined>>;
-  itemData: React.Dispatch<React.SetStateAction<TableI | undefined>>;
+  arr: TableI[] | null | undefined | adminLiveI[];
+  setArr: React.Dispatch<
+    React.SetStateAction<TableI[] | null | undefined | adminLiveI[]>
+  >;
+  itemData: React.Dispatch<
+    React.SetStateAction<TableI | undefined | adminLiveI>
+  >;
   editMode: boolean;
   setEditMode: React.Dispatch<React.SetStateAction<boolean>>;
   objFindingElem: string;
@@ -31,9 +39,11 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
     backgroundColor: "#00e0c6",
     color: theme.palette.common.white,
+    fontWeight: "bold",
   },
   [`&.${tableCellClasses.body}`]: {
     fontSize: 14,
+    fontWeight: "bold",
   },
 }));
 

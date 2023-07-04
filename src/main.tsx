@@ -9,6 +9,7 @@ import "./index.scss";
 import AdminProvider from "./context/AdminContext.tsx";
 import AdminCategoryProvider from "./context/AdminCategory.tsx";
 import FavoriteProvider from "./context/FavoriteContext.tsx";
+import AdminLiveProvider from "./context/AdminLive.tsx";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
@@ -16,13 +17,15 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
       <AdminProvider>
         <AdminCategoryProvider>
           <UserProvider>
-            <ActiveUserProvider>
-              <FavoriteProvider>
-                <SnackbarProvider>
-                  <App />
-                </SnackbarProvider>
-              </FavoriteProvider>
-            </ActiveUserProvider>
+            <AdminLiveProvider>
+              <ActiveUserProvider>
+                <FavoriteProvider>
+                  <SnackbarProvider>
+                    <App />
+                  </SnackbarProvider>
+                </FavoriteProvider>
+              </ActiveUserProvider>
+            </AdminLiveProvider>
           </UserProvider>
         </AdminCategoryProvider>
       </AdminProvider>

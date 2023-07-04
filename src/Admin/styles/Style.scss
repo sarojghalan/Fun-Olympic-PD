@@ -42,10 +42,10 @@
     button{
       border: none;
       padding: 4px 16px;
-      background-color: $admin-color;
+      background-color: $primary-color;
       color: $white-color;
       &:hover{
-        background-color: $primary-color;
+        background-color: $admin-color;
       }
     }
   }
