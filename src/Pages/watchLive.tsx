@@ -54,22 +54,8 @@ function WatchLive() {
                   />
                 </div>
                 <div className="content__description">
-                  <div className="content__desc__img">
-                    <img src={fun} alt="" />
-                  </div>
                   <p>FUN OLYMPICS | {dataNavigator?.state?.title} </p>
-                  <button
-                    className="content__desc__btn"
-                    onClick={(e: React.MouseEvent<HTMLButtonElement>) =>
-                      favoriteHandler(
-                        e,
-                        dataNavigator?.state?.url,
-                        dataNavigator?.state?.title
-                      )
-                    }
-                  >
-                    Add to Favorite
-                  </button>
+                
                 </div>
               </div>
             </div>
