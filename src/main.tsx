@@ -11,10 +11,12 @@ import AdminCategoryProvider from "./context/AdminCategory.tsx";
 import FavoriteProvider from "./context/FavoriteContext.tsx";
 import AdminLiveProvider from "./context/AdminLive.tsx";
 import AdminPopularProvider from "./context/AdminPopular.tsx";
+import ScrollToTop from "./ScrollToTop.tsx";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
     <BrowserRouter>
+    <ScrollToTop />
       <AdminProvider>
         <AdminCategoryProvider>
           <UserProvider>
