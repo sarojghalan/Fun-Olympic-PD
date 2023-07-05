@@ -25,9 +25,9 @@ function AdminPopular() {
   const [objFindingElem, setObjFindingElem] = useState<string>("");
   const [isDataReloader, setIsDataReloader] = useState<boolean>(false);
 
-  const [popularData, setPopularData] = useState<
-    adminPopularI | undefined
-  >(initialState);
+  const [popularData, setPopularData] = useState<adminPopularI | undefined>(
+    initialState
+  );
 
   useEffect(() => {
     if (isDataReloader) {
@@ -70,6 +70,8 @@ function AdminPopular() {
     }
   };
 
+  console.log("admin popular : ", adminPopular);
+
   return (
     <>
       <div className="admin__category__wrapper">
@@ -81,7 +83,7 @@ function AdminPopular() {
           setData={setPopularData}
         >
           <form className="admin__add__form" action="">
-            <p>Add Live Stream</p>
+            <p>Add Popular Stream</p>
             <div className="form__input">
               <label htmlFor="">TITLE</label>
               <br />
@@ -103,6 +105,19 @@ function AdminPopular() {
                 placeholder="enter url ..."
                 name="url"
                 value={popularData?.url}
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                  categoryHandler(e)
+                }
+              />
+            </div>
+            <div className="form__input">
+              <label htmlFor="">Description</label>
+              <br />
+              <input
+                type="text"
+                placeholder="enter url ..."
+                name="description"
+                value={popularData?.description}
                 onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
                   categoryHandler(e)
                 }

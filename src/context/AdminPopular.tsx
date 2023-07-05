@@ -30,15 +30,15 @@ const AdminPopularProvider = ({ children }: AdminPopularProviderI) => {
 
   useEffect(() => {
     setIsLoading(true);
-    if (localStorage.getItem("live")) {
-      setAdminPopular(JSON.parse(localStorage.getItem("live")!));
+    if (localStorage.getItem("popular")) {
+      setAdminPopular(JSON.parse(localStorage.getItem("popular")!));
     }
     setIsLoading(false);
   }, []);
 
   useEffect(() => {
     if (adminPopular) {
-      localStorage.setItem("live", JSON.stringify(adminPopular));
+      localStorage.setItem("popular", JSON.stringify(adminPopular));
     }
   }, [adminPopular, isLoading]);
 

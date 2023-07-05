@@ -49,7 +49,7 @@ function SideBar() {
               <StreamIcon />
             </span>
             <p>
-              <NavLink to="/popular">Popular</NavLink>
+              <NavLink to="/popular-stream">Popular</NavLink>
             </p>
           </div>
           <div className="sidebar__list__content">

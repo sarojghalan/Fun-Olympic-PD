@@ -12,7 +12,7 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import { useSnackbar } from "notistack";
 
 interface TableI {
-  title: string; 
+  title: string;
   url: string;
   iconClass: string;
 }
