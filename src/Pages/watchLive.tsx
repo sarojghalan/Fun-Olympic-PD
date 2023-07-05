@@ -26,7 +26,6 @@ function WatchLive() {
     title: string
   ) => {
     e.preventDefault();
-    e.preventDefault();
     if (favorite?.find((item) => item.title === title)) {
       enqueueSnackbar("Already In favorite.", { variant: "error" });
     } else if (favorite === null) {

@@ -5,6 +5,7 @@ interface AdminPopular {
   url: string;
   description: string;
 }
+
 interface AdminContextI {
   isLoading: boolean;
   setIsLoading: React.Dispatch<React.SetStateAction<boolean>>;
@@ -23,9 +24,9 @@ export const AdminPopularContext = createContext<AdminContextI>(
 
 const AdminPopularProvider = ({ children }: AdminPopularProviderI) => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
-  const [adminPopular, setAdminPopular] = useState<AdminPopular[] | null | undefined>(
-    null
-  );
+  const [adminPopular, setAdminPopular] = useState<
+    AdminPopular[] | null | undefined
+  >(null);
 
   useEffect(() => {
     setIsLoading(true);

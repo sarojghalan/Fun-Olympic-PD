@@ -25,9 +25,9 @@ function AdminPopular() {
   const [objFindingElem, setObjFindingElem] = useState<string>("");
   const [isDataReloader, setIsDataReloader] = useState<boolean>(false);
 
-  const [popularData, setPopularData] = useState<adminPopularI | undefined>(
-    initialState
-  );
+  const [popularData, setPopularData] = useState<
+    adminPopularI | undefined
+  >(initialState);
 
   useEffect(() => {
     if (isDataReloader) {
@@ -69,8 +69,6 @@ function AdminPopular() {
       }
     }
   };
-
-  console.log("popularData : ", popularData);
 
   return (
     <>

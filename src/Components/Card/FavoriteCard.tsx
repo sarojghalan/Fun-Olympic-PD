@@ -17,9 +17,13 @@ interface FavoriteCardI {
   >;
 }
 
+console.log(typeof window.location.pathname);
+
 function FavoriteCard({ url, title, favorite, setFavorite }: FavoriteCardI) {
   const navigate = useNavigate();
   const { enqueueSnackbar } = useSnackbar();
+  const pathname = window.location.pathname;
+
   const favoriteHandler = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     navigate(`/watchlive/${title}`, {
@@ -28,11 +32,24 @@ function FavoriteCard({ url, title, favorite, setFavorite }: FavoriteCardI) {
   };
   const removeHandler = (
     e: React.MouseEvent<HTMLParagraphElement>,
-    title: string
+    title: string,
+    url: string
   ) => {
     e.preventDefault();
-    setFavorite(favorite?.filter((item) => item.title !== title));
-    enqueueSnackbar("Removed from favorite.", { variant: "success" });
+    if (pathname == "/live") {
+      if (favorite?.find((item) => item.title === title)) {
+        enqueueSnackbar("Already In favorite.", { variant: "error" });
+      } else if (favorite === null) {
+        setFavorite([{ url: url, title: title }]);
+        enqueueSnackbar("Added to the favorite.", { variant: "success" });
+      } else {
+        setFavorite([...favorite!, { url: url, title: title }]);
+        enqueueSnackbar("Added to the favorite.", { variant: "success" });
+      }
+    } else {
+      setFavorite(favorite?.filter((item) => item.title !== title));
+      enqueueSnackbar("Removed from favorite.", { variant: "success" });
+    }
   };
   return (
     <div className="favorite__card__wrapper">
@@ -52,10 +69,14 @@ function FavoriteCard({ url, title, favorite, setFavorite }: FavoriteCardI) {
           <p
             className="icon"
             onClick={(e: React.MouseEvent<HTMLParagraphElement>) =>
-              removeHandler(e, title)
+              removeHandler(e, title, url)
             }
           >
-            <i className="fa-solid fa-trash"></i>
+            {pathname == "/live" ? (
+              <i className="fa-solid fa-heart"></i>
+            ) : (
+              <i className="fa-solid fa-trash"></i>
+            )}
           </p>
         </div>
         {/* <p className="stream__card__description">{cardDescription}</p> */}

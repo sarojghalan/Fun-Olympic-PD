@@ -3,7 +3,7 @@ import Title from "../Components/Title/Title";
 import { FavoriteContext } from "../context/FavoriteContext";
 import { useSnackbar } from "notistack";
 import FavoriteCard from "../Components/Card/FavoriteCard";
-
+ 
 function Favorite() {
   const { favorite, setFavorite } = useContext(FavoriteContext);
   const { enqueueSnackbar } = useSnackbar();

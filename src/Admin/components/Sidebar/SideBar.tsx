@@ -5,7 +5,7 @@ import CategoryIcon from "@mui/icons-material/Category";
 import AnalyticsIcon from "@mui/icons-material/Analytics";
 import LiveTvIcon from "@mui/icons-material/LiveTv";
 import BarChartIcon from "@mui/icons-material/BarChart";
-import StreamIcon from '@mui/icons-material/Stream';
+import StreamIcon from "@mui/icons-material/Stream";
 import { NavLink } from "react-router-dom";
 import { logo } from "../../../assets";
 
