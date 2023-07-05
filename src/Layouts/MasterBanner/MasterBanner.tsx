@@ -1,11 +1,8 @@
 import React, { useContext } from "react";
-import Title from "../../Components/Title/Title";
-import ReactVideoPlayer from "../../Utils/ReactVideoPlayer";
 import { videoUrls } from "../../data/videoUrl";
 import "../../Scss/Main.scss";
 import { ActiveUserContext } from "../../context/ActiveUser";
 import { useNavigate } from "react-router-dom";
-import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import { fun, master } from "../../assets";
 import { FavoriteContext } from "../../context/FavoriteContext";
 import { useSnackbar } from "notistack";

@@ -1,13 +1,20 @@
+import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { CategoryCardI } from "../../Interface/CategoryCardInterface";
 import "../../Scss/Main.scss";
+import { ActiveUserContext } from "../../context/ActiveUser";
 function CategoriesCard({ title, iconClass, url }: CategoryCardI) {
   const navigate = useNavigate();
+  const { activeUser } = useContext(ActiveUserContext);
   const categoryHandler = (e: React.MouseEvent<HTMLDivElement>) => {
     e.preventDefault();
-    navigate(`/watchlive/${title}`, {
-      state: { title: title, url: url },
-    });
+    if (activeUser) {
+      navigate(`/watchlive/${title}`, {
+        state: { title: title, url: url },
+      });
+    } else {
+      navigate("/login");
+    }
   };
   return (
     <div

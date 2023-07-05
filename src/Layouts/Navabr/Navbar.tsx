@@ -61,18 +61,21 @@ function Navbar() {
                 Categories
               </NavLink>
             </li>
-            <li className="nav-item">
-              <NavLink
-                className="nav-link active"
-                aria-current="page"
-                to="/favorite"
-              >
-                Favorite{" "}
-                {favorite !== null && (
-                  <sup className="count__value">{favorite?.length}</sup>
-                )}
-              </NavLink>
-            </li>
+            {activeUser && (
+              <li className="nav-item">
+                <NavLink
+                  className="nav-link active"
+                  aria-current="page"
+                  to="/favorite"
+                >
+                  Favorite{" "}
+                  {favorite !== null && (
+                    <sup className="count__value">{favorite?.length}</sup>
+                  )}
+                </NavLink>
+              </li>
+            )}
+
             <li className="nav-item">
               <NavLink
                 className="nav-link active"

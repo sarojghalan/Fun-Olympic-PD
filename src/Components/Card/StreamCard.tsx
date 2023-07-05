@@ -1,19 +1,26 @@
+import React, { useContext } from "react";
 import { StreamCardInterface } from "../../Interface/StreamCardInterface";
 import SampleButton from "../Button/SampleButton";
 import { useNavigate } from "react-router-dom";
+import { ActiveUserContext } from "../../context/ActiveUser";
 
 function StreamCard({
   image,
   cardTitle,
   cardDescription,
-  url
+  url,
 }: StreamCardInterface) {
   const navigate = useNavigate();
+  const { activeUser } = useContext(ActiveUserContext);
   const streamHandler = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
-    navigate(`/watchlive/${cardTitle}`, {
-      state: { title: cardTitle, url: url },
-    });
+    if (activeUser) {
+      navigate(`/watchlive/${cardTitle}`, {
+        state: { title: cardTitle, url: url },
+      });
+    } else {
+      navigate("/login");
+    }
   };
   return (
     <div className="stream__card__wrapper">

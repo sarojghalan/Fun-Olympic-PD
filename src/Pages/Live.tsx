@@ -4,21 +4,13 @@ import { useContext } from "react";
 import { AdminLiveContext } from "../context/AdminLive";
 import FavoriteCard from "../Components/Card/FavoriteCard";
 import { FavoriteContext } from "../context/FavoriteContext";
+import { ActiveUserContext } from "../context/ActiveUser";
 
 function Live() {
   const navigate = useNavigate();
+  const { activeUser } = useContext(ActiveUserContext);
   const { adminLive, setAdminLive } = useContext(AdminLiveContext);
   const { favorite, setFavorite } = useContext(FavoriteContext);
-
-  const liveHandler = (
-    e: React.MouseEvent<HTMLButtonElement>,
-    keys: number
-  ) => {
-    e.preventDefault();
-    navigate(`/watchLive/live${keys + 1}`, {
-      state: { title: `live ${keys + 1}`, key: keys },
-    });
-  };
 
   return (
     <div className="overall__wrapper">

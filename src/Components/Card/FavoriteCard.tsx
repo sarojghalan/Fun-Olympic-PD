@@ -1,7 +1,9 @@
+import react, { useContext } from "react";
 import SampleButton from "../Button/SampleButton";
 import { useNavigate } from "react-router-dom";
 import ReactVideoPlayer from "../../Utils/ReactVideoPlayer";
 import { useSnackbar } from "notistack";
+import { ActiveUserContext } from "../../context/ActiveUser";
 
 interface FavoriteI {
   url: string;
@@ -19,14 +21,19 @@ interface FavoriteCardI {
 
 function FavoriteCard({ url, title, favorite, setFavorite }: FavoriteCardI) {
   const navigate = useNavigate();
+  const { activeUser } = useContext(ActiveUserContext);
   const { enqueueSnackbar } = useSnackbar();
   const pathname = window.location.pathname;
 
   const favoriteHandler = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
-    navigate(`/watchlive/${title}`, {
-      state: { title: title, url: url },
-    });
+    if (activeUser) {
+      navigate(`/watchlive/${title}`, {
+        state: { title: title, url: url },
+      });
+    } else {
+      navigate("/login");
+    }
   };
   const removeHandler = (
     e: React.MouseEvent<HTMLParagraphElement>,
