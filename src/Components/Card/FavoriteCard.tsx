@@ -17,8 +17,6 @@ interface FavoriteCardI {
   >;
 }
 
-console.log(typeof window.location.pathname);
-
 function FavoriteCard({ url, title, favorite, setFavorite }: FavoriteCardI) {
   const navigate = useNavigate();
   const { enqueueSnackbar } = useSnackbar();

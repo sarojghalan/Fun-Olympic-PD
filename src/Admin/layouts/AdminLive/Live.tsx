@@ -42,7 +42,6 @@ function AdminLive() {
   const addHandler = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     if (isEditMode) {
-      console.log("edit mode true");
       setAdminLive(adminLive?.filter((item) => item.title !== objFindingElem));
       setIsDataReloader(!isDataReloader);
       setIsModalOpen(!isModalOpen);
@@ -65,8 +64,6 @@ function AdminLive() {
       }
     }
   };
-
-  console.log("liveData : ", liveData);
 
   return (
     <>

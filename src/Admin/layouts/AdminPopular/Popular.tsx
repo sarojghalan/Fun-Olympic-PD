@@ -44,7 +44,6 @@ function AdminPopular() {
   const addHandler = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     if (isEditMode) {
-      console.log("edit mode true");
       setAdminPopular(
         adminPopular?.filter((item) => item.title !== objFindingElem)
       );
@@ -70,7 +69,6 @@ function AdminPopular() {
     }
   };
 
-  console.log("admin popular : ", adminPopular);
 
   return (
     <>

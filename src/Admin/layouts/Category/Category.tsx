@@ -44,7 +44,6 @@ function AdminCategory() {
   const addHandler = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     if (isEditMode) {
-      console.log("edit mode true");
       setAdminCategory(
         adminCategory?.filter((item) => item.title !== objFindingElem)
       );

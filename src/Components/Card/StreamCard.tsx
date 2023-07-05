@@ -6,13 +6,13 @@ function StreamCard({
   image,
   cardTitle,
   cardDescription,
-  id,
+  url
 }: StreamCardInterface) {
   const navigate = useNavigate();
   const streamHandler = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     navigate(`/watchlive/${cardTitle}`, {
-      state: { title: cardTitle, key: id },
+      state: { title: cardTitle, url: url },
     });
   };
   return (

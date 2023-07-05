@@ -99,11 +99,6 @@ function Profile() {
     }
   };
 
-  console.log(
-    "active user : ",
-    passwordData.password,
-    passwordData.confirmPassword
-  );
   return (
     <div className="profile__wrapper">
       <div className="container">

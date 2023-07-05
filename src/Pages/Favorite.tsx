@@ -8,7 +8,6 @@ function Favorite() {
   const { favorite, setFavorite } = useContext(FavoriteContext);
   const { enqueueSnackbar } = useSnackbar();
 
-  console.log("favorite : ", favorite);
   return (
     <div className="overall__wrapper">
       <div className="favorite__container">

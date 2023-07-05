@@ -20,7 +20,6 @@ function Live() {
     });
   };
 
-  console.log(adminLive);
   return (
     <div className="overall__wrapper">
       <div className="container">
