@@ -10,6 +10,7 @@
     text-align: center;
     border-radius: $md-spacing;
     margin-bottom: $md-spacing;
+    margin-right: 40px;
     p {
       font-size: $md-font;
       text-decoration: wavy;
@@ -22,16 +23,18 @@
   }
 }
 .comment__content {
-  height: 62vh;
+  height: 50vh;
   overflow-y: scroll;
-  ul{
+  background-color: $white-color;
+  border: $md-spacing solid $primary-color;
+  ul {
     padding: 4px 16px;
-    li{
+    li {
       list-style-type: none;
       // background-color: $admin-color;
       margin: 4px;
       // display: initial;
-      span{
+      span {
         background-color: $primary-color;
         color: $white-color;
         padding: 2px 4px;
@@ -43,11 +46,18 @@
   }
 }
 .comment__section {
-  height: 80vh;
-  border: 1px solid black;
+  height: 72vh;
+  margin: 20px 0px 0px;
+  border-radius: $md-spacing;
+  background-color: $primary-color;
   .top__chat {
     text-align: center;
     padding: 8px 0px;
+    p{
+      font-weight: bold;
+      color: $white-color;
+      font-size: 15px;
+    }
   }
   hr {
     margin: 0;
@@ -57,17 +67,34 @@
     display: flex;
     gap: 8px;
     padding: 8px 12px 0px;
+    margin-top: $md-spacing;
+    .comment__icon__name{
+      text-align: center;
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+      margin-left: $md-spacing;
+      margin-right: $md-spacing;
+    }
     span {
-      background-color: $admin-color;
-      color: white;
+      background-color: $white-color;
+      color: $primary-color;
       padding: 4px 8px;
       border-radius: 50%;
+      margin-right: 8px !important;
     }
     p {
       padding-top: 4px;
+      color: $white-color;
+      font-weight: bold;
     }
-    input {
-      width: 90%;
+    .input__bar {
+      margin-top: $sm-spacing;
+      width: 100%;
+      width: 100%;
+      border: none;
+      padding: 4px $md-spacing !important;
       &:focus {
         outline: none;
       }
@@ -76,12 +103,14 @@
 }
 .comment__btn {
   text-align: center;
-  margin-top: 8px;
+  margin-top: $md-spacing;
+  
   button {
     border-radius: $sm-spacing;
     border: none;
-    color: $white-color;
-    background-color: $admin-color;
-    padding: 2px 8px;
+    color: $black-color;
+    font-weight: bold;
+    background-color: $white-color;
+    padding: 2px $md-spacing;
   }
 }

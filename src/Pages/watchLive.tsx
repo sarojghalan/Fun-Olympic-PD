@@ -1,6 +1,5 @@
 import React, { useState, useContext } from "react";
 import Title from "../Components/Title/Title";
-import { videoUrls } from "../data/videoUrl";
 import ReactVideoPlayer from "../Utils/ReactVideoPlayer";
 import { useLocation } from "react-router-dom";
 import { fun } from "../assets";
@@ -82,6 +81,18 @@ function WatchLive() {
                 <hr />
                 <div className="comment__content">
                   <ul>
+                    <li>
+                      <span>
+                        <i className="fa-solid fa-user"></i>
+                      </span>
+                      what a move ⚡️ ☄️ 💥  
+                    </li>
+                    <li>
+                      <span>
+                        <i className="fa-solid fa-user"></i>
+                      </span>
+                      lovely  😍 🥰 😘 
+                    </li>
                     {commentArray.map((item) => (
                       <li>
                         <span>
@@ -94,18 +105,23 @@ function WatchLive() {
                 </div>
                 <hr />
                 <div className="comment__input__section">
-                  <span>
-                    <i className="fa-solid fa-user"></i>
-                  </span>
-                  <p>Saroj</p>
-                  <input
-                    type="text"
-                    placeholder="comment..."
-                    value={commentData}
-                    onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-                      setCommentData(e.target.value)
-                    }
-                  />
+                  <div className="comment__icon__name">
+                    <span>
+                      <i className="fa-solid fa-user"></i>
+                    </span>
+                    <p>Saroj</p>
+                  </div>
+                  <div>
+                    <input
+                      type="text"
+                      placeholder="comment..."
+                      className="input__bar"
+                      value={commentData}
+                      onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                        setCommentData(e.target.value)
+                      }
+                    />
+                  </div>
                 </div>
                 <div className="comment__btn">
                   <button
