@@ -1,0 +1,10 @@
+@import "../abstract/_abstracts";
+.news__wrapper{
+    .news__img{
+        img{
+            height: auto;
+            width: 100%;
+            object-fit: contain;
+        }
+    }
+}
