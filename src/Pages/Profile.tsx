@@ -178,7 +178,7 @@ function Profile() {
                 <label htmlFor="">New Password : </label>
                 <br />
                 <input
-                  type="text"
+                  type="password"
                   placeholder="New Password ..."
                   name="password"
                   value={passwordData?.password}
@@ -191,7 +191,7 @@ function Profile() {
                 <label htmlFor="">Confirm New Password : </label>
                 <br />
                 <input
-                  type="text"
+                  type="password"
                   placeholder="Confirm Password ..."
                   name="confirmPassword"
                   value={passwordData?.confirmPassword}

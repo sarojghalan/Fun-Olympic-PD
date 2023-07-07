@@ -71,13 +71,13 @@ function WatchLive() {
                       <span>
                         <i className="fa-solid fa-user"></i>
                       </span>
-                      what a move ⚡️ ☄️ 💥  
+                     Nepal ⚡️ ☄️ 💥  
                     </li>
                     <li>
                       <span>
                         <i className="fa-solid fa-user"></i>
                       </span>
-                      lovely  😍 🥰 😘 
+                      India , India  😍 🥰 😘 
                     </li>
                     {commentArray.map((item) => (
                       <li>

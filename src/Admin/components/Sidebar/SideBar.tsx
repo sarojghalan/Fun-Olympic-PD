@@ -65,7 +65,7 @@ function SideBar() {
               <BarChartIcon />
             </span>
             <p>
-              <NavLink to="/graph">Chart</NavLink>
+              <NavLink to="/graph">Ranking</NavLink>
             </p>
           </div>
         </div>

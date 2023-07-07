@@ -1,0 +1,44 @@
+@import "../abstract/_abstracts";
+.gallery__content {
+  display: grid;
+  margin-bottom: 100px;
+  gap: 2px;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows: 400px;
+  grid-template-areas:
+    "one one"
+    "two three"
+    "four four"
+    "five six";
+  .gallery__content:nth-child(1) {
+    grid-area: one;
+  }
+  .gallery__content:nth-child(2) {
+    grid-area: two;
+  }
+  .gallery__content:nth-child(3) {
+    grid-area: three;
+  }
+  .gallery__content:nth-child(4) {
+    grid-area: four;
+  }
+  .gallery__content:nth-child(5) {
+    grid-area: five;
+  }
+  .gallery__content:nth-child(6) {
+    grid-area: six;
+  }
+  .gallery__content:nth-child(7) {
+    grid-area: seven;
+  }
+  .gallery__content:nth-child(8) {
+    grid-area: eight;
+  }
+}
+
+.gallery__content img {
+  //   width: 400PX;
+  //   height: 400PX;
+  width: 100%;
+  object-fit: cover;
+}

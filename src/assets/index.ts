@@ -23,9 +23,11 @@ import galleryFour from "./galleryFour.avif";
 import galleryFive from "./galleryFive.avif";
 import gallerySix from "./gallerySix.avif";
 import gallerySeven from "./gallerySeven.avif";
-import galleryEight from "./galleryEight.avif";
+import galleryEight from "./gallleryEight.avif";
+import live from "./live.jpg";
 
 export {
+  live,
   galleryOne,
   galleryTwo,
   galleryThree,

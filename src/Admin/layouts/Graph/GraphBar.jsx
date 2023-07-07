@@ -146,7 +146,7 @@ function GraphBar() {
         {/* <Line data={data} /> */}
         <Bar data={data} options={options} />
       </div>
-      <p className="graph__watch__time">Country Gold Rank</p>
+      <p className="graph__watch__time">Country Rank</p>
     </div>
   );
 }

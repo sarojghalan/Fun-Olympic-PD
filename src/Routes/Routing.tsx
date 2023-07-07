@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import Profile from "../Pages/Profile";
 import LeaderBoard from "../Pages/LeaderBoard";
 import Schedule from "../Pages/Schedule";
+import Gallery from "../Layouts/Gallery/Gallery";
 const Home = lazy(() => import("../Layouts/Home/Home"));
 const Login = lazy(() => import("../Pages/Auth/Login"));
 const Register = lazy(() => import("../Pages/Auth/Register"));
@@ -24,6 +25,7 @@ function Routing() {
         <Route path="/schedule" element={<Schedule />} />
         <Route path="/category" element={<Category />} />
         <Route path="/live" element={<Live />} />
+        <Route path="/gallery" element={<Gallery />} />
         <Route path="/favorite" element={<Favorite />} />
         <Route path="/leaderboard" element={<LeaderBoard />} />
         <Route path="/watchLive/:slug" element={<WatchLive />} />
