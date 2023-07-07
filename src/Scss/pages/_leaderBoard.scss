@@ -1,0 +1,10 @@
+@import "../abstract/_abstracts";
+.ranking__wrapper{
+    margin: 64px 0px;
+    text-transform: uppercase !important;
+    .ranking__country{
+        img{
+            height: 40px !important;
+        }
+    }
+}

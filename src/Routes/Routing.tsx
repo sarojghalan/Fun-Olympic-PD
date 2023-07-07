@@ -1,6 +1,7 @@
 import { lazy, Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
 import Profile from "../Pages/Profile";
+import LeaderBoard from "../Pages/LeaderBoard";
 const Home = lazy(() => import("../Layouts/Home/Home"));
 const Login = lazy(() => import("../Pages/Auth/Login"));
 const Register = lazy(() => import("../Pages/Auth/Register"));
@@ -22,6 +23,7 @@ function Routing() {
         <Route path="/category" element={<Category />} />
         <Route path="/live" element={<Live />} />
         <Route path="/favorite" element={<Favorite />} />
+        <Route path="/leaderboard" element={<LeaderBoard />} />
         <Route path="/watchLive/:slug" element={<WatchLive />} />
       </Routes>
     </Suspense>
