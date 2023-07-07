@@ -1,13 +1,91 @@
 @import "../abstract/variables";
-.navbar {
+.navbar__one {
   position: sticky;
+  transition: background-color 1.5s ease ;
   top: 0%;
   left: 0%;
   box-shadow: $none;
-  background-color: $white-color !important;
+  background-color: white !important;
   z-index: 9999;
   box-shadow: 0px 8px 10px -5px rgba(0, 0, 0, 0.1);
   padding: 16px 0px;
+  .navbar-brand {
+    img {
+      height: 20px;
+      width: 80px;
+      object-fit: contain;
+    }
+  }
+  .navbar-nav {
+    gap: $lg-spacing;
+    .nav-item {
+      a {
+        &:hover {
+          background-color: $primary-color;
+          color: $white-color !important;
+          border-radius: $s-spacing;
+        }
+        &:hover .count__value {
+          background-color: $white-color;
+          color: $black-color;
+        }
+      }
+    }
+  }
+  .nav__right__section {
+    gap: $lg-spacing;
+    display: flex;
+  }
+}
+.navbar__two {
+  // position: sticky;
+  transition: background-color 1.5s ease ;
+  top: 0%;
+  left: 0%;
+  box-shadow: $none;
+  z-index: 0;
+  background-color: transparent !important;
+  // z-index: 9999;
+  // box-shadow: 0px 8px 10px -5px rgba(0, 0, 0, 0.1);
+  padding: 16px 0px;
+  .navbar-brand {
+    img {
+      height: 20px;
+      width: 80px;
+      object-fit: contain;
+    }
+  }
+  .navbar-nav {
+    gap: $lg-spacing;
+    .nav-item {
+      a {
+        &:hover {
+          background-color: $primary-color;
+          color: $white-color !important;
+          border-radius: $s-spacing;
+        }
+        &:hover .count__value {
+          background-color: $white-color;
+          color: $black-color;
+        }
+      }
+    }
+  }
+  .nav__right__section {
+    gap: $lg-spacing;
+    display: flex;
+  }
+}
+.navbar {
+  // position: sticky;
+  // top: 0%;
+  // left: 0%;
+  // box-shadow: $none;
+  // // background-color: $white-color !important;
+  // z-index: 9999;
+  // transition: background-color 1.5s ease !important;
+  // box-shadow: 0px 8px 10px -5px rgba(0, 0, 0, 0.1);
+  // padding: 16px 0px;
   .navbar-brand {
     img {
       height: 20px;
@@ -42,6 +120,9 @@
   background-color: $primary-color;
   border-radius: 50%;
 }
-.nav-link{
-  outline: $none;
-}
+// .nav-link {
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   gap: 12px;
+// }

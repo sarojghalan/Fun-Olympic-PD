@@ -107,7 +107,7 @@ function AdminPopular() {
                   categoryHandler(e)
                 }
               />
-            </div>
+          </div>
             <div className="form__input">
               <label htmlFor="">Description</label>
               <br />
