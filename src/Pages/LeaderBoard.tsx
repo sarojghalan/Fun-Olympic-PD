@@ -104,7 +104,7 @@ const RankingArr: RankingI[] = [
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
-    backgroundColor: "#5fa2d7",
+    backgroundColor: "#00e0c6",
     color: theme.palette.common.white,
   },
   [`&.${tableCellClasses.body}`]: {

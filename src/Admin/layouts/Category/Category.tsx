@@ -78,6 +78,7 @@ function AdminCategory() {
           setIsModalOpen={setIsModalOpen}
           data={categoryData}
           setData={setCategoryData}
+          className="modal__back"
         >
           <form className="admin__add__form" action="">
             <p>Add Category</p>

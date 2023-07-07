@@ -2,7 +2,7 @@
 
 .sidebar__wrapper {
   height: 100vh;
-  width: 250px;
+  width: 300px;
   .sidebar__content {
     .sidebar__title {
       text-align: center;
@@ -25,20 +25,28 @@
       }
     }
     .sidebar__list {
+      padding: 32px;
+      height: 68.6vh;
+      line-height: 2.6;
+      margin: 32px 32px 32px;
+      border-radius: 16px;
+      background: linear-gradient(to bottom, #f5be02, #00cbd9, #ea340d) !important;
       .sidebar__list__content {
         margin: $md-spacing $md-spacing;
         display: FLEX;
         .active {
-          color: $primary-color !important;
+          color: $black-color !important;
           font-weight: bold;
-          span {
-            color: $primary-color;
-          }
+          letter-spacing: 2px;
+          text-decoration: underline;
+          // span {
+          //   color: $white-color !important;
+          // }
         }
         p {
           font-size: 20px;
           a {
-            color: $black-color !important;
+            color: $white-color !important;
             padding-top: 12px !important;
           }
 
@@ -51,7 +59,7 @@
           }
         }
         span {
-          color: $primary-color;
+          color: $white-color;
           margin-right: $md-spacing;
           margin-top:4px ;
         }

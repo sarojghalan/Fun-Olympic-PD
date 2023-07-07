@@ -1,0 +1,8 @@
+@import "../abstract/_abstracts";
+.schedule__wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: $md-spacing;
+    margin-bottom: $lg-spacing;
+}

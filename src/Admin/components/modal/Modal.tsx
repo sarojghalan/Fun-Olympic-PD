@@ -32,11 +32,12 @@ const style = {
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
-  width: 400,
-  bgcolor: "background.paper",
-  border: "2px solid #000",
+  width: 500,
+  background: "linear-gradient(to left, #f5be02, #00cbd9, #ea340d)",
   boxShadow: 24,
-  p: 4,
+  borderRadius: '16px',
+  color:'white',
+  p: 8,
 };
 
 export default function BasicModal({

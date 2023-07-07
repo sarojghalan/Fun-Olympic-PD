@@ -3,12 +3,14 @@
 
 .routing__wrapper {
   .admin__title__wrapper {
-    background-color: $primary-color;
+    background: linear-gradient(to left, #f5be02, #00cbd9, #ea340d) !important;
+    border-radius: 16px;
     color: $white-color;
-    width: 83.7vw !important;
+    width: 75.2vw !important;
     justify-content: space-between !important;
     align-items: center;
     display: flex;
+    margin: $lg-spacing;
     padding: $md-spacing;
     box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
       0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
@@ -16,40 +18,45 @@
       background-color: $white-color;
       padding: 4px 12px;
       border: none;
-      color: $black-color;
+      color: #f5be02;
       font-weight: bold;
-      &:hover{
+      border-radius: 16px;
+      &:hover {
         background-color: black;
         color: $white-color;
       }
     }
   }
 }
-.admin__add__form{
+.admin__add__form {
   text-align: center;
-  .form__input{
-    margin: 10px 0px;
-    input{
+  .form__input {
+    margin: 32px 0px;
+    input {
       width: 100%;
-      padding: 4px 12px;
-      &:focus{
+      padding: 8px 16px;
+      border-radius: 16px;
+      border: none;
+      &:focus {
         outline: none;
       }
     }
   }
-  .form__btn{
+  .form__btn {
     width: 100&;
-    button{
+    button {
       border: none;
-      padding: 4px 16px;
-      background-color: $primary-color;
-      color: $white-color;
-      &:hover{
-        background-color: $admin-color;
+      padding: 8px 32px;
+      background-color: $white-color;
+      color: #00cbd9;
+      font-weight: bold;
+      border-radius: 16px;
+      &:hover {
+       color:black;
       }
     }
   }
-  p{
+  p {
     font-size: $md-font;
   }
 }

@@ -1,7 +1,7 @@
 @import "../../../Scss/abstract/_abstracts";
 
 .admin__card__wrapper {
-  background-color: $primary-color;
+  background: linear-gradient(to bottom , #f5be02, #00cbd9, );
   width: 200px;
   height: 200px;
   display: flex;

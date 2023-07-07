@@ -37,7 +37,7 @@ interface TableArrI {
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
-    backgroundColor: "#00e0c6",
+    backgroundColor: "transparent",
     color: theme.palette.common.white,
     fontWeight: "bold",
   },
@@ -90,14 +90,18 @@ export default function CustomizedTables({
   };
 
   return (
-    <TableContainer component={Paper}>
+    <TableContainer component={Paper} sx={{ borderRadius: "16px" }}>
       <Table sx={{ minWidth: 700 }} aria-label="customized table">
-        <TableHead>
+        <TableHead
+          sx={{
+            background: "linear-gradient(to left, #f5be02, #00cbd9, #ea340d)",
+          }}
+        >
           <TableRow>
             <StyledTableCell>SN</StyledTableCell>
-            <StyledTableCell align="right">Title</StyledTableCell>
-            <StyledTableCell align="right">url</StyledTableCell>
-            <StyledTableCell align="right">Action</StyledTableCell>
+            <StyledTableCell align="center">Title</StyledTableCell>
+            <StyledTableCell align="center">url</StyledTableCell>
+            <StyledTableCell align="center">Action</StyledTableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -106,35 +110,42 @@ export default function CustomizedTables({
               <StyledTableCell component="th" scope="row">
                 {keys + 1}
               </StyledTableCell>
-              <StyledTableCell align="right">{row.title}</StyledTableCell>
-              <StyledTableCell align="right">{row.url}</StyledTableCell>
-              <StyledTableCell align="right">
+              <StyledTableCell align="center">{row.title}</StyledTableCell>
+              <StyledTableCell align="center">{row.url}</StyledTableCell>
+              <StyledTableCell align="center">
                 <div className="d-flex justify-content-center">
                   <button
                     style={{
                       border: "none",
-                      background: "transparent",
                       marginLeft: "10px",
-                      color: "#00e0c6",
+                      color: "white",
+                      background: "#ea340d",
+                      fontSize: "12px",
+                      padding: "6px 20px",
+                      borderRadius: "16px",
                     }}
                     onClick={(e: React.MouseEvent<HTMLButtonElement>) =>
                       editHandler(e, row?.title)
                     }
                   >
-                    <EditIcon />
+                    {/* <EditIcon /> */}
+                    Edit
                   </button>
                   <button
                     style={{
                       border: "none",
-                      background: "transparent",
+                      background: "#ea340d",
                       marginLeft: "10px",
-                      color: "#00e0c6",
+                      color: "white",
+                      fontSize: "12px",
+                      padding: "5px 16px",
+                      borderRadius: "16px",
                     }}
                     onClick={(e: React.MouseEvent<HTMLButtonElement>) =>
                       deleteHandler(e, row?.title)
                     }
                   >
-                    <DeleteIcon />
+                    Delete
                   </button>
                 </div>
               </StyledTableCell>

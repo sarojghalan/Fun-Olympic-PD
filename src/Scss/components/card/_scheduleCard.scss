@@ -1,0 +1,29 @@
+@import "../../abstract/_abstracts";
+.schedule__card__wrapper {
+  background-color: $primary-color;
+  color: $white-color;
+  padding: $md-spacing;
+  text-align: center;
+  border-radius: $sm-spacing;
+  h3 {
+    margin-bottom: $md-spacing;
+    font-weight: bold;
+  }
+  .schedule__card__box {
+    background-color: $white-color;
+    color: $primary-color;
+    padding: 12px;
+    border-radius: $sm-spacing;
+    .schedule__card__bar {
+      display: flex;
+      gap: $md-spacing;
+      margin-bottom: $md-spacing;
+      p {
+      }
+    }
+  }
+}
+.match__status {
+  font-weight: bold;
+  font-size:16px;
+}
