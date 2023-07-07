@@ -15,6 +15,7 @@ import StreamIcon from "@mui/icons-material/Stream";
 import WatchLaterIcon from "@mui/icons-material/WatchLater";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import MilitaryTechIcon from "@mui/icons-material/MilitaryTech";
+import CollectionsIcon from '@mui/icons-material/Collections';
 
 function Navbar() {
   const { activeUser, setActiveUser } = useContext(ActiveUserContext);
@@ -142,6 +143,18 @@ function Navbar() {
                   <MilitaryTechIcon sx={{ fontSize: "14px" }} />{" "}
                 </span>
                 Leader Board
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink
+                className="nav-link active"
+                aria-current="page"
+                to="/gallery"
+              >
+                <span>
+                  <CollectionsIcon sx={{ fontSize: "14px" }} />{" "}
+                </span>
+                Gallery
               </NavLink>
             </li>
           </ul>

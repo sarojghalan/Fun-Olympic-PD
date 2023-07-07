@@ -16,8 +16,24 @@ import spain from "./spain.png";
 import turkry from "./turkey.png";
 import uk from "./unitedStates.png";
 import banner from "./banner.png";
+import galleryOne from "./galleryOne.avif";
+import galleryTwo from "./galleryTwo.avif";
+import galleryThree from "./galleryThree.avif";
+import galleryFour from "./galleryFour.avif";
+import galleryFive from "./galleryFive.avif";
+import gallerySix from "./gallerySix.avif";
+import gallerySeven from "./gallerySeven.avif";
+import galleryEight from "./galleryEight.avif";
 
 export {
+  galleryOne,
+  galleryTwo,
+  galleryThree,
+  galleryFour,
+  galleryFive,
+  gallerySix,
+  gallerySeven,
+  galleryEight,
   banner,
   china,
   argentina,
