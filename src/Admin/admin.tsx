@@ -9,16 +9,17 @@ import { useNavigate } from "react-router-dom";
 function Admin() {
   const { enqueueSnackbar } = useSnackbar();
   const navigate = useNavigate();
-  const { isActive, setIsActive } = useContext(AdminContext);
+  const { isActive, setIsActive, setAdmin } = useContext(AdminContext);
   const logoutHandler = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     setIsActive(false);
+    setAdmin(null);
     enqueueSnackbar("Admin Logout Successfully .", { variant: "success" });
     navigate("/login");
   };
   return (
     <>
-      <div className="d-flex"> 
+      <div className="d-flex">
         <SideBar />
         <div className="routing__wrapper">
           <div className="admin__title__wrapper">

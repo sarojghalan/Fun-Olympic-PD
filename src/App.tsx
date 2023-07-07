@@ -7,10 +7,10 @@ import { AdminContext } from "./context/AdminContext";
 import Admin from "./Admin/admin";
 
 function App() {
-  const { isActive, setIsActive } = useContext(AdminContext);
+  const { isActive, setIsActive ,admin} = useContext(AdminContext);
   return (
     <>
-      {isActive ? (
+      {admin ? (
         <Admin />
       ) : (
         <>

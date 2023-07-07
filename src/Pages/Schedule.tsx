@@ -2,7 +2,7 @@ import ScheduleCard from "../Components/Card/ScheduleCard";
 import Title from "../Components/Title/Title";
 const scheduleArr = [
   {
-    title: "Archery",
+    title: "Football",
     date1: "2023-01-01",
     date2: "2023-01-02",
     date3: "2023-01-03",
@@ -24,7 +24,7 @@ const scheduleArr = [
     time4: "06:30 PM ",
   },
   {
-    title: "Jalvin",
+    title: "Racing",
     date1: "2023-03-01",
     date2: "2023-03-02",
     date3: "2023-03-03",
@@ -35,7 +35,7 @@ const scheduleArr = [
     time4: "07:15 PM ",
   },
   {
-    title: "Marathon",
+    title: "Basketball",
     date1: "2023-04-01",
     date2: "2023-04-02",
     date3: "2023-04-03",
