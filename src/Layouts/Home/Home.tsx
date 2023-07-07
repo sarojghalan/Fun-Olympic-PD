@@ -1,6 +1,7 @@
 import About from "../About/About";
 import MasterBanner from "../MasterBanner/MasterBanner";
 import Popular from "../Popular/Popular";
+import Ranker from "../Ranker/Ranker";
 
 
 function Home() {
@@ -8,6 +9,7 @@ function Home() {
     <>
       <MasterBanner />
       <About />
+      <Ranker />
       <Popular />
     </>
   );
