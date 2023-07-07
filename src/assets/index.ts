@@ -15,8 +15,10 @@ import nepal from "./nepal.png";
 import spain from "./spain.png";
 import turkry from "./turkey.png";
 import uk from "./unitedStates.png";
+import banner from "./banner.png";
 
 export {
+  banner,
   china,
   argentina,
   bangladesh,

@@ -3,4 +3,12 @@
     display: flex;
     gap: $md-spacing;
     margin: $lg-spacing;
+    background-image: url('../assets/logo.png');
+    background-repeat: no-repeat ;
+    background-size: contain;
+    height: 500px;
+    background-position:center;
+    .category__content__wrapper{
+        padding-top: 100px;
+    }
 }

@@ -5,7 +5,13 @@
   gap: 20px;
   align-items: center; 
   justify-content: center;
-  height: auto;
+  background-image: url('../assets/logo.png');
+  background-repeat: no-repeat ;
+  background-size: contain;
+  height: 500px;
+  background-position:center;
+  padding-top: 60px;
+  // height: auto;
   .live__content {
     flex: 1;
     text-align: center;
