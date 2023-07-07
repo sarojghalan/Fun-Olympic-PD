@@ -1,23 +1,22 @@
 @import "../../abstract/_abstracts";
 .stream__card__wrapper {
-    margin: $lg-spacing 0px;
+  margin: $lg-spacing 0px;
   width: 280px;
   padding: $md-spacing;
   border-radius: $md-spacing;
-  background-color: $secondary-color;
+  background: linear-gradient(to top, #f5be02, #00cbd9,#ea340d);
   .stream__card__img {
     text-align: center;
     img {
       height: 250px;
-      width:100%;
+      width: 100%;
       border-radius: $md-spacing;
       object-fit: cover;
     }
   }
   .stream__card__content {
-    
     .stream__card__title {
-        color: $primary-color;
+      color: $white-color;
       display: flex;
       margin: $md-spacing 0px;
       span {
@@ -27,16 +26,20 @@
         font-weight: $bold;
       }
     }
-    .stream__card__description{
-        margin: $md-spacing 0px;
-        text-align: justify;
-        line-height: 1.2;
+    .stream__card__description {
+      margin: $md-spacing 0px;
+      text-align: justify;
+      line-height: 1.2;
+      color: $white-color;
     }
   }
   .stream__card__btn {
     text-align: center;
-    .stream__btn{
-        width: 100%;
+    .stream__btn {
+      width: 100%;
+      &:hover{
+        background-color: #f5be02 ;
+      }
     }
   }
 }

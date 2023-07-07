@@ -5,10 +5,10 @@
   margin: $lg-spacing $xs-spacing;
   text-transform: capitalize;
   // flex-direction: column;
-  @include md{
+  @include md {
     flex-direction: column;
-  };
-  @include sm{
+  }
+  @include sm {
     flex-direction: column;
   }
   .about__left__section {
@@ -26,12 +26,17 @@
     display: flex;
     flex-basis: 50%;
     justify-content: center;
+    border-radius: 16px;
     align-items: center;
-    p{
-        text-align: justify;
-        @include sm{
-          text-align: center;
-        }
+    color: $white-color;
+    padding: 32px;
+    background: linear-gradient(to right, #f5be02, #00cbd9,#ea340d);
+    p {
+      text-align: justify;
+      font-size: 18px;
+      @include sm {
+        text-align: center;
+      }
     }
   }
 }
